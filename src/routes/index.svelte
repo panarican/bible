@@ -1,2 +1,22 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script context="module" lang="ts">
+	export const prerender = true;
+	import Verse from '$lib/verse/Verse.svelte';
+</script>
+
+<script>
+	import { results } from '$lib/stores.js';
+
+	let searchResults = [];
+
+	results.subscribe(value => {
+		searchResults = value;
+	});
+</script>
+
+<svelte:head>
+	<title>Home</title>
+</svelte:head>
+
+{#each searchResults as result, i}
+	<Verse {...result} />
+{/each}
