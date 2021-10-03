@@ -1,23 +1,47 @@
+<!-- src/_layout.svelte -->
+<script context="module">
+	import { waitLocale } from 'svelte-i18n';
+
+	export async function preload() {
+		// awaits for the loading of the 'en-US' and 'en' dictionaries
+		return waitLocale()
+	}
+</script>
 <script>
-	import Header from '$lib/header/Header.svelte';
-	import Nav from '$lib/nav/Nav.svelte';
-	import Footer from '$lib/footer/Footer.svelte';
-	import Top from '$lib/top/Top.svelte';
-	import { count } from '$lib/stores.js';
+	import Footer from '$lib/components/footer/Footer.svelte';
+	import Top from '$lib/components/top/Top.svelte';
+	import Verse from '$lib/components/verse/Verse.svelte';
+	import Header from '$lib/components/header/Header.svelte';
+	import Nav from '$lib/components/nav/Nav.svelte';
+	import { count, results } from '$lib/stores.js';
 	import '../app.scss';
+	import { addMessages, init } from 'svelte-i18n';
+	import en from '$lib/locales/en.json';
+	import es from '$lib/locales/es.json';
 
 	let resultsCount = 0;
+	let searchResults = [];
 
-	count.subscribe(value => {
-		resultsCount = value;
+	count.subscribe(value => resultsCount = value);
+	results.subscribe(value => searchResults = value);
+
+	addMessages('en', en);
+	addMessages('es', es);
+
+	init({
+		initialLocale: 'en'
 	});
 </script>
 
 <Header />
 <Nav />
 
+<slot />
+
 <main class="{resultsCount === 0 ? 'main main--no-results' : 'main'}">
-	<slot />
+	{#each searchResults as result, i}
+		<Verse {...result} />
+	{/each}
 </main>
 
 <Footer count="{resultsCount}" />

@@ -10,5 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Bible - Standard Search</title>
+	<title>Bible - Favorite Search</title>
 </svelte:head>
+
+

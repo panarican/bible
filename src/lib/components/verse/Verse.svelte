@@ -16,7 +16,7 @@
     </div>
 </div>
 <script>
-    import { language, results } from '$lib/stores.js';
+    import { language, results, count } from '$lib/stores.js';
     import { getFavorites, isFavorite, handleSearch } from '$lib/service.js';
     export let index = 0;
     export let content = '';
@@ -57,7 +57,16 @@
 
         // re render results for favorite
         if (isFavorite) {
-            handleSearch();
+            for (let i = 0; i < currentResults.length; i++) {
+                if (currentResults[i].index === index) {
+                    currentResults.splice(i, 1);
+                    break;
+                }
+            }
+
+            // Update the store for results
+            results.set(currentResults);
+            count.set(currentResults.length)
         }
     }
 
@@ -197,19 +206,19 @@
     background-color: #fff;
   }
   .button--play {
-    background-image: url('$lib/verse/images/play.svg');
+    background-image: url('$lib/components/verse/images/play.svg');
     background-position: 60% 50%;
   }
   .button--map {
-    background-image: url('$lib/verse/images/map-pin.svg');
+    background-image: url('$lib/components/verse/images/map-pin.svg');
   }
   .button--plus {
-    background-image: url('$lib/verse/images/heart.svg');
+    background-image: url('$lib/components/verse/images/heart.svg');
   }
   .button--minus {
-    background-image: url('$lib/verse/images/heart-fill.svg');
+    background-image: url('$lib/components/verse/images/heart-fill.svg');
   }
   .button--back {
-    background-image: url('$lib/verse/images/chevron-left.svg');
+    background-image: url('$lib/components/verse/images/chevron-left.svg');
   }
 </style>

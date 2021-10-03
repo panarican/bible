@@ -1,6 +1,6 @@
 import { results, count, bible, bookTerms, language } from '$lib/stores.js';
 import { page } from '$app/stores';
-export const isFavorite = page.path === 'favorite';
+export const isFavorite = true;
 export const isJump =  page.path === 'jump';
 export const books = [
     'Genesis',         'Exodus',          'Leviticus',     'Numbers',
@@ -26,17 +26,9 @@ let currentLang = 'en';
 let bibleResponse = [];
 let bookTermsResponse = [];
 
-language.subscribe(value => {
-    currentLang = value;
-});
-
-bible.subscribe(value => {
-    bibleResponse = value;
-});
-
-bookTerms.subscribe(value => {
-    bookTermsResponse = value;
-})
+language.subscribe(value => currentLang = value);
+bible.subscribe(value => bibleResponse = value);
+bookTerms.subscribe(value => bookTermsResponse = value)
 
 /**
  * Init app
@@ -72,7 +64,7 @@ export function getFavorites() {
 export function handleSubmit(evt) {
     evt.preventDefault();
     setTimeout(() => {
-        search.blur();
+        document.getElementById('search').blur();
     }, 300);
 }
 
@@ -148,7 +140,7 @@ export function handleSearch(evt) {
                     title: `${books[(items[i].b-1)]} ${items[i].c}:${items[i].v}`,
                     content: `${text} (${books[(items[i].b - 1)]} ${items[i].c}:${items[i].v})`,
                     index: items[i].i,
-                    heart: isFavorite || (favorites.find(value => value === items[i].i) >= 0) ? true : false,
+                    heart: isFavorite || (favorites.find(value => value === items[i].i) >= 0),
                     flip: false
                 })
             }

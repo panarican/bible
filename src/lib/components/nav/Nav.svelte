@@ -2,6 +2,7 @@
 	<a tabindex="2" class="nav__item nav__item--active" href="/">Standard</a>
 	<a tabindex="3" class="nav__item" href="/favorite/">Favorite</a>
 	<a tabindex="4" class="nav__item" href="/jump/">Jump</a>
+	<a tabindex="5" class="nav__item" href="/es/">Spanish</a>
 </nav>
 
 <style lang="scss">
@@ -35,3 +36,8 @@
 		}
 	}
 </style>
+
+<script>
+	import { page } from '$app/stores';
+	let links = [];
+</script>

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "standard": {
+      "placeholder": "Search a passage or bible verse"
+    },
+    "favorite": {
+      "placeholder": "Search a favorite passage or bible verse"
+    },
+    "jump": {
+      "placeholder": "Jump to a verse in the bible"
+    }
+  },
+  "nav": {
+    "standard": {
+      "label": "Standard",
+      "path": "standard"
+    },
+    "favorite": {
+      "label": "Favorite",
+      "path": "favorite"
+    },
+    "jump": {
+      "label": "Jump",
+      "path": "jump"
+    }
+  },
+  "footer": {
+    "count": "Results found ({count})"
+  }
+}

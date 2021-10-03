@@ -1,0 +1,30 @@
+{
+  "header": {
+    "standard": {
+      "placeholder": "Busque un pasaje o versículo bíblico"
+    },
+    "favorite": {
+      "placeholder": "Busque un pasaje o versículo bíblico favorito"
+    },
+    "jump": {
+      "placeholder": "Saltar a un verso de la Biblia"
+    }
+  },
+  "nav": {
+    "standard": {
+      "label": "Estándar",
+      "path": "estandar"
+    },
+    "favorite": {
+      "label": "Favorito",
+      "path": "favorite"
+    },
+    "jump": {
+      "label": "Salto",
+      "path": "salto"
+    }
+  },
+  "footer": {
+    "count": "Resultados encontrados ({count})"
+  }
+}

@@ -5,10 +5,10 @@
 	import { init } from 'svelte-i18n';
 
 	init({
-		initialLocale: 'en'
+		initialLocale: 'es'
 	});
 </script>
 
 <svelte:head>
-	<title>Bible - Standard Search</title>
+	<title>Biblia - Búsqueda estándar</title>
 </svelte:head>

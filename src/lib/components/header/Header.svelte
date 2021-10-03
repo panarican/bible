@@ -6,7 +6,7 @@
 				autocomplete="off"
 				id="search"
 				class="search"
-				placeholder="Search a passage or bible verse"
+				placeholder={$_("header.standard.placeholder")}
 				type="search"
 				on:keyup={handleSearch}
 			/>
@@ -15,6 +15,7 @@
 </header>
 
 <script>
+	import { _ } from 'svelte-i18n';
 	import { handleSearch, handleSubmit, init } from '$lib/service.js';
 	init();
 </script>
