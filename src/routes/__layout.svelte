@@ -1,12 +1,4 @@
 <!-- src/_layout.svelte -->
-<script context="module">
-	import { waitLocale } from 'svelte-i18n';
-
-	export async function preload() {
-		// awaits for the loading of the 'en-US' and 'en' dictionaries
-		return waitLocale()
-	}
-</script>
 <script>
 	import Footer from '$lib/components/footer/Footer.svelte';
 	import Top from '$lib/components/top/Top.svelte';

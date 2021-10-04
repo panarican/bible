@@ -6607,9 +6607,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-30fd5e51.js",
+      file: assets + "/_app/start-486f6ddb.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-30fd5e51.js", assets + "/_app/chunks/vendor-32f8feb6.js"]
+      js: [assets + "/_app/start-486f6ddb.js", assets + "/_app/chunks/vendor-2214ea37.js"]
     },
     fetched: void 0,
     floc: false,
@@ -6718,7 +6718,7 @@ var module_lookup = {
     return salto;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-f6e54ff5.js", "css": ["assets/pages/__layout.svelte-88341c3a.css"], "js": ["pages/__layout.svelte-f6e54ff5.js", "chunks/vendor-32f8feb6.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-693304aa.js", "css": [], "js": ["error.svelte-693304aa.js", "chunks/vendor-32f8feb6.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-678f8b17.js", "css": [], "js": ["pages/index.svelte-678f8b17.js", "chunks/vendor-32f8feb6.js"], "styles": [] }, "src/routes/favorite.svelte": { "entry": "pages/favorite.svelte-77fc5a52.js", "css": [], "js": ["pages/favorite.svelte-77fc5a52.js", "chunks/vendor-32f8feb6.js"], "styles": [] }, "src/routes/jump.svelte": { "entry": "pages/jump.svelte-f47012b0.js", "css": [], "js": ["pages/jump.svelte-f47012b0.js", "chunks/vendor-32f8feb6.js"], "styles": [] }, "src/routes/es/index.svelte": { "entry": "pages/es/index.svelte-66f529e6.js", "css": [], "js": ["pages/es/index.svelte-66f529e6.js", "chunks/vendor-32f8feb6.js"], "styles": [] }, "src/routes/es/favorita.svelte": { "entry": "pages/es/favorita.svelte-da7cb7b2.js", "css": [], "js": ["pages/es/favorita.svelte-da7cb7b2.js", "chunks/vendor-32f8feb6.js"], "styles": [] }, "src/routes/es/salto.svelte": { "entry": "pages/es/salto.svelte-e70afa2e.js", "css": [], "js": ["pages/es/salto.svelte-e70afa2e.js", "chunks/vendor-32f8feb6.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-e7ba6aca.js", "css": ["assets/pages/__layout.svelte-88341c3a.css"], "js": ["pages/__layout.svelte-e7ba6aca.js", "chunks/vendor-2214ea37.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-472ab020.js", "css": [], "js": ["error.svelte-472ab020.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-519dda25.js", "css": [], "js": ["pages/index.svelte-519dda25.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/favorite.svelte": { "entry": "pages/favorite.svelte-f1f92a9a.js", "css": [], "js": ["pages/favorite.svelte-f1f92a9a.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/jump.svelte": { "entry": "pages/jump.svelte-161a8198.js", "css": [], "js": ["pages/jump.svelte-161a8198.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/es/index.svelte": { "entry": "pages/es/index.svelte-79904716.js", "css": [], "js": ["pages/es/index.svelte-79904716.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/es/favorita.svelte": { "entry": "pages/es/favorita.svelte-6a707d5d.js", "css": [], "js": ["pages/es/favorita.svelte-6a707d5d.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/es/salto.svelte": { "entry": "pages/es/salto.svelte-6d31dcd3.js", "css": [], "js": ["pages/es/salto.svelte-6d31dcd3.js", "chunks/vendor-2214ea37.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -7370,12 +7370,12 @@ var isSafeInteger = hasNativeIsSafeInteger ? Number.isSafeInteger : function(n) 
 };
 var REGEX_SUPPORTS_U_AND_Y = true;
 try {
-  re$1 = RE("([^\\p{White_Space}\\p{Pattern_Syntax}]*)", "yu");
-  REGEX_SUPPORTS_U_AND_Y = ((_a = re$1.exec("a")) === null || _a === void 0 ? void 0 : _a[0]) === "a";
+  re = RE("([^\\p{White_Space}\\p{Pattern_Syntax}]*)", "yu");
+  REGEX_SUPPORTS_U_AND_Y = ((_a = re.exec("a")) === null || _a === void 0 ? void 0 : _a[0]) === "a";
 } catch (_2) {
   REGEX_SUPPORTS_U_AND_Y = false;
 }
-var re$1;
+var re;
 var startsWith = hasNativeStartsWith ? function startsWith2(s2, search, position) {
   return s2.startsWith(search, position);
 } : function startsWith3(s2, search, position) {
@@ -8811,9 +8811,6 @@ derived([M], () => Q);
 derived([M], () => R);
 derived([M], () => V);
 var te = derived([M, s], () => W);
-function re(e) {
-  return b(e || D() || j().initialLocale);
-}
 var Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $_, $$unsubscribe__;
   $$unsubscribe__ = subscribe(X, (value) => $_ = value);
@@ -9258,11 +9255,8 @@ var es = {
 };
 var css = {
   code: ".main.svelte-1df0dld{justify-items:center;display:grid;gap:calc(var(--spacing) / 1.5);grid-template-rows:masonry;grid-template-columns:repeat(auto-fill, minmax(293px, 1fr));padding-bottom:0}.main--no-results.svelte-1df0dld{display:none}",
-  map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<!-- src/_layout.svelte -->\\n<script context=\\"module\\">\\n\\timport { waitLocale } from 'svelte-i18n';\\n\\n\\texport async function preload() {\\n\\t\\t// awaits for the loading of the 'en-US' and 'en' dictionaries\\n\\t\\treturn waitLocale()\\n\\t}\\n<\/script>\\n<script>\\n\\timport Footer from '$lib/components/footer/Footer.svelte';\\n\\timport Top from '$lib/components/top/Top.svelte';\\n\\timport Verse from '$lib/components/verse/Verse.svelte';\\n\\timport Header from '$lib/components/header/Header.svelte';\\n\\timport Nav from '$lib/components/nav/Nav.svelte';\\n\\timport { count, results } from '$lib/stores.js';\\n\\timport '../app.scss';\\n\\timport { addMessages, init } from 'svelte-i18n';\\n\\timport en from '$lib/locales/en.json';\\n\\timport es from '$lib/locales/es.json';\\n\\n\\tlet resultsCount = 0;\\n\\tlet searchResults = [];\\n\\n\\tcount.subscribe(value => resultsCount = value);\\n\\tresults.subscribe(value => searchResults = value);\\n\\n\\taddMessages('en', en);\\n\\taddMessages('es', es);\\n\\n\\tinit({\\n\\t\\tinitialLocale: 'en'\\n\\t});\\n<\/script>\\n\\n<Header />\\n<Nav />\\n\\n<slot />\\n\\n<main class=\\"{resultsCount === 0 ? 'main main--no-results' : 'main'}\\">\\n\\t{#each searchResults as result, i}\\n\\t\\t<Verse {...result} />\\n\\t{/each}\\n</main>\\n\\n<Footer count=\\"{resultsCount}\\" />\\n<Top />\\n\\n<style lang=\\"scss\\">.main {\\n  justify-items: center;\\n  display: grid;\\n  gap: calc(var(--spacing) / 1.5);\\n  grid-template-rows: masonry;\\n  grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));\\n  padding-bottom: 0;\\n}\\n.main--no-results {\\n  display: none;\\n}</style>\\n"],"names":[],"mappings":"AAiDmB,KAAK,eAAC,CAAC,AACxB,aAAa,CAAE,MAAM,CACrB,OAAO,CAAE,IAAI,CACb,GAAG,CAAE,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAC/B,kBAAkB,CAAE,OAAO,CAC3B,qBAAqB,CAAE,OAAO,SAAS,CAAC,CAAC,OAAO,KAAK,CAAC,CAAC,GAAG,CAAC,CAAC,CAC5D,cAAc,CAAE,CAAC,AACnB,CAAC,AACD,iBAAiB,eAAC,CAAC,AACjB,OAAO,CAAE,IAAI,AACf,CAAC"}`
+  map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<!-- src/_layout.svelte -->\\n<script>\\n\\timport Footer from '$lib/components/footer/Footer.svelte';\\n\\timport Top from '$lib/components/top/Top.svelte';\\n\\timport Verse from '$lib/components/verse/Verse.svelte';\\n\\timport Header from '$lib/components/header/Header.svelte';\\n\\timport Nav from '$lib/components/nav/Nav.svelte';\\n\\timport { count, results } from '$lib/stores.js';\\n\\timport '../app.scss';\\n\\timport { addMessages, init } from 'svelte-i18n';\\n\\timport en from '$lib/locales/en.json';\\n\\timport es from '$lib/locales/es.json';\\n\\n\\tlet resultsCount = 0;\\n\\tlet searchResults = [];\\n\\n\\tcount.subscribe(value => resultsCount = value);\\n\\tresults.subscribe(value => searchResults = value);\\n\\n\\taddMessages('en', en);\\n\\taddMessages('es', es);\\n\\n\\tinit({\\n\\t\\tinitialLocale: 'en'\\n\\t});\\n<\/script>\\n\\n<Header />\\n<Nav />\\n\\n<slot />\\n\\n<main class=\\"{resultsCount === 0 ? 'main main--no-results' : 'main'}\\">\\n\\t{#each searchResults as result, i}\\n\\t\\t<Verse {...result} />\\n\\t{/each}\\n</main>\\n\\n<Footer count=\\"{resultsCount}\\" />\\n<Top />\\n\\n<style lang=\\"scss\\">.main {\\n  justify-items: center;\\n  display: grid;\\n  gap: calc(var(--spacing) / 1.5);\\n  grid-template-rows: masonry;\\n  grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));\\n  padding-bottom: 0;\\n}\\n.main--no-results {\\n  display: none;\\n}</style>\\n"],"names":[],"mappings":"AAyCmB,KAAK,eAAC,CAAC,AACxB,aAAa,CAAE,MAAM,CACrB,OAAO,CAAE,IAAI,CACb,GAAG,CAAE,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAC/B,kBAAkB,CAAE,OAAO,CAC3B,qBAAqB,CAAE,OAAO,SAAS,CAAC,CAAC,OAAO,KAAK,CAAC,CAAC,GAAG,CAAC,CAAC,CAC5D,cAAc,CAAE,CAAC,AACnB,CAAC,AACD,iBAAiB,eAAC,CAAC,AACjB,OAAO,CAAE,IAAI,AACf,CAAC"}`
 };
-async function preload() {
-  return re();
-}
 var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let resultsCount = 0;
   let searchResults = [];
@@ -9273,7 +9267,6 @@ var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $({ initialLocale: "en" });
   $$result.css.add(css);
   return `
-
 
 
 ${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
@@ -9289,8 +9282,7 @@ ${validate_component(Top, "Top").$$render($$result, {}, {}, {})}`;
 var __layout = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _layout,
-  preload
+  "default": _layout
 });
 function load({ error: error2, status }) {
   return { props: { error: error2, status } };
