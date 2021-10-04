@@ -16,12 +16,12 @@
         -webkit-appearance: none;
         appearance: none;
         transition: all 0.25s ease-in-out;
-        background: #333 url('$lib/components/top/images/chevron-up.svg') center center no-repeat;
         background-size: 50% auto;
         transform: translateY(70px) scale(1);
         opacity: 0;
         z-index: 9999;
         user-select: none;
+			background: #333 url('/assets/images/chevron-up.svg') center center no-repeat;
     }
     .top--active {
         transform: translateY(0) scale(1);

@@ -207,19 +207,19 @@
     background-color: #fff;
   }
   .button--play {
-    background-image: url('$lib/components/verse/images/play.svg');
+    background-image: url('/assets/images/play.svg');
     background-position: 60% 50%;
   }
   .button--map {
-    background-image: url('$lib/components/verse/images/map-pin.svg');
+    background-image: url('/assets/images/map-pin.svg');
   }
   .button--plus {
-    background-image: url('$lib/components/verse/images/heart.svg');
+    background-image: url('/assets/images/heart.svg');
   }
   .button--minus {
-    background-image: url('$lib/components/verse/images/heart-fill.svg');
+    background-image: url('/assets/images/heart-fill.svg');
   }
   .button--back {
-    background-image: url('$lib/components/verse/images/chevron-left.svg');
+    background-image: url('/assets/images/chevron-left.svg');
   }
 </style>
