@@ -16,25 +16,27 @@
     </div>
 </div>
 <script>
-    import { language, results, count } from '$lib/stores.js';
-    import { getFavorites, isFavorite, handleSearch } from '$lib/service.js';
+    import { results, count } from '$lib/stores.js';
+    import { locale } from 'svelte-i18n';
+    import { page } from '$app/stores';
+    import { getFavorites } from '$lib/service.js';
     export let index = 0;
     export let content = '';
     export let title = '';
     export let heart = false;
     export let flip = false;
-    let speakerName = 'Alex';
     let currentResults = [];
+    let isFavoritePage = false;
 
-    language.subscribe(value => speakerName = value === 'en' ? 'Alex' : 'Juan');
     results.subscribe(value => currentResults = value);
 
     /**
      * Handle favorite
-     * @param {object} evt
      */
-    function handleFavorite(evt) {
-        if (!isFavorite) {
+    function handleFavorite() {
+        isFavoritePage = $page.path === '/favorite' || $page.path === '/es/favorita';
+
+        if (!isFavoritePage) {
             heart = !heart;
         }
 
@@ -56,7 +58,7 @@
         localStorage.setItem('favorites', JSON.stringify(favorites));
 
         // re render results for favorite
-        if (isFavorite) {
+        if (isFavoritePage) {
             for (let i = 0; i < currentResults.length; i++) {
                 if (currentResults[i].index === index) {
                     currentResults.splice(i, 1);
@@ -74,16 +76,15 @@
      * Speak event when passage is clicked
      * @param {object} evt
      */
-    function handleSpeak(evt) {
-        const synth = window.speechSynthesis;
-        const voices = synth.getVoices();
-        const voice = voices.find(({name}) => name === speakerName);
-        const utterThis = new SpeechSynthesisUtterance(content);
-        utterThis.voice = voice;
-        utterThis.pitch = 1;
-        utterThis.rate = 1;
-        synth.cancel();
-        synth.speak(utterThis);
+    async function handleSpeak(evt) {
+        window.speechSynthesis.cancel();
+        setTimeout(() => {
+            const utterThis = new SpeechSynthesisUtterance(content);
+            utterThis.voice = window.speechSynthesis.getVoices().find(({name}) => name === ($locale === 'en' ? 'Alex' : 'Juan'));
+            utterThis.pitch = 1;
+            utterThis.rate = 1;
+            window.speechSynthesis.speak(utterThis);
+        }, 100);
     }
 
     /**
@@ -107,7 +108,7 @@
         }
 
         currentResults[currentVerse].flip = true;
-        currentResults[currentVerse].heart = isFavorite || getFavorites().find(value => value === index) >= 0;
+        currentResults[currentVerse].heart = isFavoritePage || getFavorites().find(value => value === index) >= 0;
 
         // Update the store for results
         results.set(currentResults);
