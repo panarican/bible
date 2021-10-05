@@ -41,7 +41,11 @@
 	 */
 	function updatePlaceholder() {
 		lang = $page.path.startsWith('/es') ? 'es' : 'en';
-		document.documentElement.lang = lang;
+		try {
+			document.documentElement.lang = lang;
+		} catch (e) {
+			// Do nothing
+		}
 		locale.set(lang);
 		isFavorite = $page.path === '/favorite' || $page.path === '/es/favorita';
 		isJump = $page.path === '/jump' || $page.path === '/es/salto';

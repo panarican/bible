@@ -13,6 +13,7 @@
 
 	let resultsCount = 0;
 	let searchResults = [];
+	let y;
 
 	count.subscribe(value => resultsCount = value);
 	results.subscribe(value => searchResults = value);
@@ -24,6 +25,7 @@
 		initialLocale: 'en'
 	});
 </script>
+<svelte:window bind:scrollY={y}/>
 
 <Header />
 <Nav />
@@ -37,7 +39,7 @@
 </main>
 
 <Footer count="{resultsCount}" />
-<Top />
+<Top y={y} />
 
 <style lang="scss">
 	.main {

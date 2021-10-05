@@ -6607,9 +6607,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-6b151d64.js",
+      file: assets + "/_app/start-cd3ccc4e.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-6b151d64.js", assets + "/_app/chunks/vendor-2214ea37.js"]
+      js: [assets + "/_app/start-cd3ccc4e.js", assets + "/_app/chunks/vendor-c74264e5.js"]
     },
     fetched: void 0,
     floc: false,
@@ -6718,7 +6718,7 @@ var module_lookup = {
     return salto;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-8a6ee254.js", "css": ["assets/pages/__layout.svelte-3bdd2947.css"], "js": ["pages/__layout.svelte-8a6ee254.js", "chunks/vendor-2214ea37.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-472ab020.js", "css": [], "js": ["error.svelte-472ab020.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-82ef2f4a.js", "css": [], "js": ["pages/index.svelte-82ef2f4a.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/favorite.svelte": { "entry": "pages/favorite.svelte-d6db694d.js", "css": [], "js": ["pages/favorite.svelte-d6db694d.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/jump.svelte": { "entry": "pages/jump.svelte-16f42184.js", "css": [], "js": ["pages/jump.svelte-16f42184.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/es/index.svelte": { "entry": "pages/es/index.svelte-6f35d9fd.js", "css": [], "js": ["pages/es/index.svelte-6f35d9fd.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/es/favorita.svelte": { "entry": "pages/es/favorita.svelte-3d503f01.js", "css": [], "js": ["pages/es/favorita.svelte-3d503f01.js", "chunks/vendor-2214ea37.js"], "styles": [] }, "src/routes/es/salto.svelte": { "entry": "pages/es/salto.svelte-63aab31a.js", "css": [], "js": ["pages/es/salto.svelte-63aab31a.js", "chunks/vendor-2214ea37.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-b8eca220.js", "css": ["assets/pages/__layout.svelte-a9512a51.css"], "js": ["pages/__layout.svelte-b8eca220.js", "chunks/vendor-c74264e5.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-faf13b73.js", "css": [], "js": ["error.svelte-faf13b73.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-5c864e54.js", "css": [], "js": ["pages/index.svelte-5c864e54.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/favorite.svelte": { "entry": "pages/favorite.svelte-6beb5a46.js", "css": [], "js": ["pages/favorite.svelte-6beb5a46.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/jump.svelte": { "entry": "pages/jump.svelte-2ace001b.js", "css": [], "js": ["pages/jump.svelte-2ace001b.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/es/index.svelte": { "entry": "pages/es/index.svelte-1ad7174a.js", "css": [], "js": ["pages/es/index.svelte-1ad7174a.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/es/favorita.svelte": { "entry": "pages/es/favorita.svelte-99e333a9.js", "css": [], "js": ["pages/es/favorita.svelte-99e333a9.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/es/salto.svelte": { "entry": "pages/es/salto.svelte-18bb71d8.js", "css": [], "js": ["pages/es/salto.svelte-18bb71d8.js", "chunks/vendor-c74264e5.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -8821,12 +8821,15 @@ var Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<footer class="${"footer"}"><div class="${"count"}">${escape($_("footer.count", { values: { count: count2 } }))}</div></footer>`;
 });
 var css$3 = {
-  code: '.top.svelte-jrec9s{outline:none;cursor:pointer;position:fixed;bottom:calc(var(--spacing) / 1.5);right:calc(var(--spacing) / 1.5);width:50px;height:50px;border:none;text-indent:-99999px;white-space:nowrap;overflow:hidden;border-radius:50%;-webkit-appearance:none;appearance:none;transition:all 0.25s ease-in-out;background-size:50% auto;transform:translateY(70px) scale(1);opacity:0;z-index:9999;user-select:none;background:#333 url("/assets/images/chevron-up.svg") center center no-repeat}',
-  map: '{"version":3,"file":"Top.svelte","sources":["Top.svelte"],"sourcesContent":["<button tabindex=\\"5\\" id=\\"top\\" class=\\"top\\">Back to top</button>\\n<style lang=\\"scss\\">.top {\\n  outline: none;\\n  cursor: pointer;\\n  position: fixed;\\n  bottom: calc(var(--spacing) / 1.5);\\n  right: calc(var(--spacing) / 1.5);\\n  width: 50px;\\n  height: 50px;\\n  border: none;\\n  text-indent: -99999px;\\n  white-space: nowrap;\\n  overflow: hidden;\\n  border-radius: 50%;\\n  -webkit-appearance: none;\\n  appearance: none;\\n  transition: all 0.25s ease-in-out;\\n  background-size: 50% auto;\\n  transform: translateY(70px) scale(1);\\n  opacity: 0;\\n  z-index: 9999;\\n  user-select: none;\\n  background: #333 url(\\"/assets/images/chevron-up.svg\\") center center no-repeat;\\n}\\n\\n.top--active {\\n  transform: translateY(0) scale(1);\\n  opacity: 1;\\n}\\n\\n.top--active:hover {\\n  transform: translateY(0) scale(1.1);\\n}</style>\\n"],"names":[],"mappings":"AACmB,IAAI,cAAC,CAAC,AACvB,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,OAAO,CACf,QAAQ,CAAE,KAAK,CACf,MAAM,CAAE,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAClC,KAAK,CAAE,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACjC,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,QAAQ,CACrB,WAAW,CAAE,MAAM,CACnB,QAAQ,CAAE,MAAM,CAChB,aAAa,CAAE,GAAG,CAClB,kBAAkB,CAAE,IAAI,CACxB,UAAU,CAAE,IAAI,CAChB,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,WAAW,CACjC,eAAe,CAAE,GAAG,CAAC,IAAI,CACzB,SAAS,CAAE,WAAW,IAAI,CAAC,CAAC,MAAM,CAAC,CAAC,CACpC,OAAO,CAAE,CAAC,CACV,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,IAAI,CAAC,IAAI,+BAA+B,CAAC,CAAC,MAAM,CAAC,MAAM,CAAC,SAAS,AAC/E,CAAC"}'
+  code: '.top.svelte-jrec9s{outline:none;cursor:pointer;position:fixed;bottom:calc(var(--spacing) / 1.5);right:calc(var(--spacing) / 1.5);width:50px;height:50px;border:none;text-indent:-99999px;white-space:nowrap;overflow:hidden;border-radius:50%;-webkit-appearance:none;appearance:none;transition:all 0.25s ease-in-out;background-size:50% auto;transform:translateY(70px) scale(1);opacity:0;z-index:9999;user-select:none;background:#333 url("/assets/images/chevron-up.svg") center center no-repeat}.top--active.svelte-jrec9s{transform:translateY(0) scale(1);opacity:1}.top--active.svelte-jrec9s:hover{transform:translateY(0) scale(1.1)}',
+  map: `{"version":3,"file":"Top.svelte","sources":["Top.svelte"],"sourcesContent":["<script>\\n\\texport let y;\\n\\n\\t/**\\n\\t * Handle scroll top\\n\\t */\\n\\tfunction handleScrollTop() {\\n\\t\\twindow.scroll({\\n\\t\\t\\ttop: 0,\\n\\t\\t\\tleft: 0,\\n\\t\\t\\tbehavior: 'smooth'\\n\\t\\t});\\n\\t}\\n<\/script>\\n\\n<button tabindex=\\"5\\" id=\\"top\\" class=\\"top{(y > 1000 ? ' top--active' : '')}\\" on:click={handleScrollTop}>Back to top</button>\\n<style lang=\\"scss\\">.top {\\n  outline: none;\\n  cursor: pointer;\\n  position: fixed;\\n  bottom: calc(var(--spacing) / 1.5);\\n  right: calc(var(--spacing) / 1.5);\\n  width: 50px;\\n  height: 50px;\\n  border: none;\\n  text-indent: -99999px;\\n  white-space: nowrap;\\n  overflow: hidden;\\n  border-radius: 50%;\\n  -webkit-appearance: none;\\n  appearance: none;\\n  transition: all 0.25s ease-in-out;\\n  background-size: 50% auto;\\n  transform: translateY(70px) scale(1);\\n  opacity: 0;\\n  z-index: 9999;\\n  user-select: none;\\n  background: #333 url(\\"/assets/images/chevron-up.svg\\") center center no-repeat;\\n}\\n\\n.top--active {\\n  transform: translateY(0) scale(1);\\n  opacity: 1;\\n}\\n\\n.top--active:hover {\\n  transform: translateY(0) scale(1.1);\\n}</style>\\n\\n"],"names":[],"mappings":"AAgBmB,IAAI,cAAC,CAAC,AACvB,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,OAAO,CACf,QAAQ,CAAE,KAAK,CACf,MAAM,CAAE,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAClC,KAAK,CAAE,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACjC,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,QAAQ,CACrB,WAAW,CAAE,MAAM,CACnB,QAAQ,CAAE,MAAM,CAChB,aAAa,CAAE,GAAG,CAClB,kBAAkB,CAAE,IAAI,CACxB,UAAU,CAAE,IAAI,CAChB,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,WAAW,CACjC,eAAe,CAAE,GAAG,CAAC,IAAI,CACzB,SAAS,CAAE,WAAW,IAAI,CAAC,CAAC,MAAM,CAAC,CAAC,CACpC,OAAO,CAAE,CAAC,CACV,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,IAAI,CAAC,IAAI,+BAA+B,CAAC,CAAC,MAAM,CAAC,MAAM,CAAC,SAAS,AAC/E,CAAC,AAED,YAAY,cAAC,CAAC,AACZ,SAAS,CAAE,WAAW,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CACjC,OAAO,CAAE,CAAC,AACZ,CAAC,AAED,0BAAY,MAAM,AAAC,CAAC,AAClB,SAAS,CAAE,WAAW,CAAC,CAAC,CAAC,MAAM,GAAG,CAAC,AACrC,CAAC"}`
 };
 var Top = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { y } = $$props;
+  if ($$props.y === void 0 && $$bindings.y && y !== void 0)
+    $$bindings.y(y);
   $$result.css.add(css$3);
-  return `<button tabindex="${"5"}" id="${"top"}" class="${"top svelte-jrec9s"}">Back to top</button>`;
+  return `<button tabindex="${"5"}" id="${"top"}" class="${"top" + escape(y > 1e3 ? " top--active" : "") + " svelte-jrec9s"}">Back to top</button>`;
 });
 var count = writable(0);
 var language = writable("en");
@@ -8919,23 +8922,20 @@ var Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let books2 = [];
   let controller = null;
   let placeholder = $_("header.standard.placeholder");
+  updatePlaceholder();
   page.subscribe(() => init2());
   bible.subscribe((value) => bibleResponse = value);
   bookTerms.subscribe((value) => bookTermsResponse = value);
   function updatePlaceholder() {
     lang = $page.path.startsWith("/es") ? "es" : "en";
-    document.documentElement.lang = lang;
+    try {
+      document.documentElement.lang = lang;
+    } catch (e) {
+    }
     M.set(lang);
     isFavorite = $page.path === "/favorite" || $page.path === "/es/favorita";
     isJump = $page.path === "/jump" || $page.path === "/es/salto";
     isStandard = $page.path === "/" || $page.path === "/es";
-    if (isFavorite) {
-      placeholder = $_("header.favorite.placeholder");
-    } else if (isJump) {
-      placeholder = $_("header.jump.placeholder");
-    } else if (isStandard) {
-      placeholder = $_("header.standard.placeholder");
-    }
     if (isFavorite) {
       placeholder = $_("header.favorite.placeholder");
     } else if (isJump) {
@@ -9267,11 +9267,12 @@ var es = {
 };
 var css = {
   code: ".main.svelte-1df0dld{justify-items:center;display:grid;gap:calc(var(--spacing) / 1.5);grid-template-rows:masonry;grid-template-columns:repeat(auto-fill, minmax(293px, 1fr));padding-bottom:0}.main--no-results.svelte-1df0dld{display:none}",
-  map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<!-- src/_layout.svelte -->\\n<script>\\n\\timport Footer from '$lib/components/footer/Footer.svelte';\\n\\timport Top from '$lib/components/top/Top.svelte';\\n\\timport Verse from '$lib/components/verse/Verse.svelte';\\n\\timport Header from '$lib/components/header/Header.svelte';\\n\\timport Nav from '$lib/components/nav/Nav.svelte';\\n\\timport { count, results } from '$lib/stores.js';\\n\\timport '../app.scss';\\n\\timport { addMessages, init } from 'svelte-i18n';\\n\\timport en from '$lib/locales/en.json';\\n\\timport es from '$lib/locales/es.json';\\n\\n\\tlet resultsCount = 0;\\n\\tlet searchResults = [];\\n\\n\\tcount.subscribe(value => resultsCount = value);\\n\\tresults.subscribe(value => searchResults = value);\\n\\n\\taddMessages('en', en);\\n\\taddMessages('es', es);\\n\\n\\tinit({\\n\\t\\tinitialLocale: 'en'\\n\\t});\\n<\/script>\\n\\n<Header />\\n<Nav />\\n\\n<slot />\\n\\n<main class=\\"{resultsCount === 0 ? 'main main--no-results' : 'main'}\\">\\n\\t{#each searchResults as result, i}\\n\\t\\t<Verse {...result} />\\n\\t{/each}\\n</main>\\n\\n<Footer count=\\"{resultsCount}\\" />\\n<Top />\\n\\n<style lang=\\"scss\\">.main {\\n  justify-items: center;\\n  display: grid;\\n  gap: calc(var(--spacing) / 1.5);\\n  grid-template-rows: masonry;\\n  grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));\\n  padding-bottom: 0;\\n}\\n.main--no-results {\\n  display: none;\\n}</style>\\n"],"names":[],"mappings":"AAyCmB,KAAK,eAAC,CAAC,AACxB,aAAa,CAAE,MAAM,CACrB,OAAO,CAAE,IAAI,CACb,GAAG,CAAE,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAC/B,kBAAkB,CAAE,OAAO,CAC3B,qBAAqB,CAAE,OAAO,SAAS,CAAC,CAAC,OAAO,KAAK,CAAC,CAAC,GAAG,CAAC,CAAC,CAC5D,cAAc,CAAE,CAAC,AACnB,CAAC,AACD,iBAAiB,eAAC,CAAC,AACjB,OAAO,CAAE,IAAI,AACf,CAAC"}`
+  map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<!-- src/_layout.svelte -->\\n<script>\\n\\timport Footer from '$lib/components/footer/Footer.svelte';\\n\\timport Top from '$lib/components/top/Top.svelte';\\n\\timport Verse from '$lib/components/verse/Verse.svelte';\\n\\timport Header from '$lib/components/header/Header.svelte';\\n\\timport Nav from '$lib/components/nav/Nav.svelte';\\n\\timport { count, results } from '$lib/stores.js';\\n\\timport '../app.scss';\\n\\timport { addMessages, init } from 'svelte-i18n';\\n\\timport en from '$lib/locales/en.json';\\n\\timport es from '$lib/locales/es.json';\\n\\n\\tlet resultsCount = 0;\\n\\tlet searchResults = [];\\n\\tlet y;\\n\\n\\tcount.subscribe(value => resultsCount = value);\\n\\tresults.subscribe(value => searchResults = value);\\n\\n\\taddMessages('en', en);\\n\\taddMessages('es', es);\\n\\n\\tinit({\\n\\t\\tinitialLocale: 'en'\\n\\t});\\n<\/script>\\n<svelte:window bind:scrollY={y}/>\\n\\n<Header />\\n<Nav />\\n\\n<slot />\\n\\n<main class=\\"{resultsCount === 0 ? 'main main--no-results' : 'main'}\\">\\n\\t{#each searchResults as result, i}\\n\\t\\t<Verse {...result} />\\n\\t{/each}\\n</main>\\n\\n<Footer count=\\"{resultsCount}\\" />\\n<Top y={y} />\\n\\n<style lang=\\"scss\\">.main {\\n  justify-items: center;\\n  display: grid;\\n  gap: calc(var(--spacing) / 1.5);\\n  grid-template-rows: masonry;\\n  grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));\\n  padding-bottom: 0;\\n}\\n.main--no-results {\\n  display: none;\\n}</style>\\n"],"names":[],"mappings":"AA2CmB,KAAK,eAAC,CAAC,AACxB,aAAa,CAAE,MAAM,CACrB,OAAO,CAAE,IAAI,CACb,GAAG,CAAE,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAC/B,kBAAkB,CAAE,OAAO,CAC3B,qBAAqB,CAAE,OAAO,SAAS,CAAC,CAAC,OAAO,KAAK,CAAC,CAAC,GAAG,CAAC,CAAC,CAC5D,cAAc,CAAE,CAAC,AACnB,CAAC,AACD,iBAAiB,eAAC,CAAC,AACjB,OAAO,CAAE,IAAI,AACf,CAAC"}`
 };
 var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let resultsCount = 0;
   let searchResults = [];
+  let y;
   count.subscribe((value) => resultsCount = value);
   results.subscribe((value) => searchResults = value);
   m("en", en);
@@ -9279,6 +9280,7 @@ var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $({ initialLocale: "en" });
   $$result.css.add(css);
   return `
+
 
 
 ${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
@@ -9289,7 +9291,7 @@ ${slots.default ? slots.default({}) : ``}
 <main class="${escape(null_to_empty(resultsCount === 0 ? "main main--no-results" : "main")) + " svelte-1df0dld"}">${each(searchResults, (result, i2) => `${validate_component(Verse, "Verse").$$render($$result, Object.assign(result), {}, {})}`)}</main>
 
 ${validate_component(Footer, "Footer").$$render($$result, { count: resultsCount }, {}, {})}
-${validate_component(Top, "Top").$$render($$result, {}, {}, {})}`;
+${validate_component(Top, "Top").$$render($$result, { y }, {}, {})}`;
 });
 var __layout = /* @__PURE__ */ Object.freeze({
   __proto__: null,

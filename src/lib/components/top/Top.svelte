@@ -1,4 +1,19 @@
-<button tabindex="5" id="top" class="top">Back to top</button>
+<script>
+	export let y;
+
+	/**
+	 * Handle scroll top
+	 */
+	function handleScrollTop() {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		});
+	}
+</script>
+
+<button tabindex="5" id="top" class="top{(y > 1000 ? ' top--active' : '')}" on:click={handleScrollTop}>Back to top</button>
 <style lang="scss">
     .top {
         outline: none;
@@ -31,3 +46,4 @@
         transform: translateY(0) scale(1.1);
     }
 </style>
+
