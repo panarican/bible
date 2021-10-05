@@ -6607,9 +6607,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-cd3ccc4e.js",
+      file: assets + "/_app/start-22a6db78.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-cd3ccc4e.js", assets + "/_app/chunks/vendor-c74264e5.js"]
+      js: [assets + "/_app/start-22a6db78.js", assets + "/_app/chunks/vendor-c74264e5.js"]
     },
     fetched: void 0,
     floc: false,
@@ -6638,7 +6638,7 @@ function init(settings = default_settings) {
 }
 var empty = () => ({});
 var manifest = {
-  assets: [{ "file": ".DS_Store", "size": 6148, "type": null }, { "file": "android-chrome-192x192.png", "size": 2410, "type": "image/png" }, { "file": "android-chrome-384x384.png", "size": 4988, "type": "image/png" }, { "file": "apple-touch-icon.png", "size": 2216, "type": "image/png" }, { "file": "assets/.DS_Store", "size": 6148, "type": null }, { "file": "assets/images/chevron-left.svg", "size": 263, "type": "image/svg+xml" }, { "file": "assets/images/chevron-up.svg", "size": 261, "type": "image/svg+xml" }, { "file": "assets/images/heart-fill.svg", "size": 364, "type": "image/svg+xml" }, { "file": "assets/images/heart.svg", "size": 364, "type": "image/svg+xml" }, { "file": "assets/images/map-pin.svg", "size": 315, "type": "image/svg+xml" }, { "file": "assets/images/play.svg", "size": 256, "type": "image/svg+xml" }, { "file": "assets/json/.DS_Store", "size": 6148, "type": null }, { "file": "assets/json/en/bible.json", "size": 5010475, "type": "application/json" }, { "file": "assets/json/en/book-terms.json", "size": 8876, "type": "application/json" }, { "file": "assets/json/es/.DS_Store", "size": 6148, "type": null }, { "file": "assets/json/es/bible.json", "size": 4797969, "type": "application/json" }, { "file": "assets/json/es/book-terms.json", "size": 8876, "type": "application/json" }, { "file": "browserconfig.xml", "size": 246, "type": "application/xml" }, { "file": "favicon-16x16.png", "size": 661, "type": "image/png" }, { "file": "favicon-32x32.png", "size": 1062, "type": "image/png" }, { "file": "favicon.ico", "size": 15086, "type": "image/vnd.microsoft.icon" }, { "file": "mstile-150x150.png", "size": 3482, "type": "image/png" }, { "file": "safari-pinned-tab.svg", "size": 1808, "type": "image/svg+xml" }, { "file": "site.webmanifest", "size": 373, "type": "application/manifest+json" }],
+  assets: [{ "file": ".DS_Store", "size": 6148, "type": null }, { "file": "android-chrome-192x192.png", "size": 2410, "type": "image/png" }, { "file": "android-chrome-384x384.png", "size": 4988, "type": "image/png" }, { "file": "apple-touch-icon.png", "size": 2216, "type": "image/png" }, { "file": "assets/.DS_Store", "size": 6148, "type": null }, { "file": "assets/images/chevron-left.svg", "size": 263, "type": "image/svg+xml" }, { "file": "assets/images/chevron-up.svg", "size": 261, "type": "image/svg+xml" }, { "file": "assets/images/heart-fill.svg", "size": 364, "type": "image/svg+xml" }, { "file": "assets/images/heart.svg", "size": 364, "type": "image/svg+xml" }, { "file": "assets/images/map-pin.svg", "size": 315, "type": "image/svg+xml" }, { "file": "assets/images/play.svg", "size": 256, "type": "image/svg+xml" }, { "file": "assets/json/.DS_Store", "size": 6148, "type": null }, { "file": "assets/json/en/bible.json", "size": 5010475, "type": "application/json" }, { "file": "assets/json/en/book-terms.json", "size": 8876, "type": "application/json" }, { "file": "assets/json/es/.DS_Store", "size": 6148, "type": null }, { "file": "assets/json/es/bible.json", "size": 4797969, "type": "application/json" }, { "file": "assets/json/es/book-terms.json", "size": 5305, "type": "application/json" }, { "file": "browserconfig.xml", "size": 246, "type": "application/xml" }, { "file": "favicon-16x16.png", "size": 661, "type": "image/png" }, { "file": "favicon-32x32.png", "size": 1062, "type": "image/png" }, { "file": "favicon.ico", "size": 15086, "type": "image/vnd.microsoft.icon" }, { "file": "mstile-150x150.png", "size": 3482, "type": "image/png" }, { "file": "safari-pinned-tab.svg", "size": 1808, "type": "image/svg+xml" }, { "file": "site.webmanifest", "size": 373, "type": "application/manifest+json" }],
   layout: "src/routes/__layout.svelte",
   error: ".svelte-kit/build/components/error.svelte",
   routes: [
@@ -6718,7 +6718,7 @@ var module_lookup = {
     return salto;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-b8eca220.js", "css": ["assets/pages/__layout.svelte-a9512a51.css"], "js": ["pages/__layout.svelte-b8eca220.js", "chunks/vendor-c74264e5.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-faf13b73.js", "css": [], "js": ["error.svelte-faf13b73.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-5c864e54.js", "css": [], "js": ["pages/index.svelte-5c864e54.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/favorite.svelte": { "entry": "pages/favorite.svelte-6beb5a46.js", "css": [], "js": ["pages/favorite.svelte-6beb5a46.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/jump.svelte": { "entry": "pages/jump.svelte-2ace001b.js", "css": [], "js": ["pages/jump.svelte-2ace001b.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/es/index.svelte": { "entry": "pages/es/index.svelte-1ad7174a.js", "css": [], "js": ["pages/es/index.svelte-1ad7174a.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/es/favorita.svelte": { "entry": "pages/es/favorita.svelte-99e333a9.js", "css": [], "js": ["pages/es/favorita.svelte-99e333a9.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/es/salto.svelte": { "entry": "pages/es/salto.svelte-18bb71d8.js", "css": [], "js": ["pages/es/salto.svelte-18bb71d8.js", "chunks/vendor-c74264e5.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-fc829034.js", "css": ["assets/pages/__layout.svelte-a9512a51.css"], "js": ["pages/__layout.svelte-fc829034.js", "chunks/vendor-c74264e5.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-faf13b73.js", "css": [], "js": ["error.svelte-faf13b73.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-5c864e54.js", "css": [], "js": ["pages/index.svelte-5c864e54.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/favorite.svelte": { "entry": "pages/favorite.svelte-6beb5a46.js", "css": [], "js": ["pages/favorite.svelte-6beb5a46.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/jump.svelte": { "entry": "pages/jump.svelte-2ace001b.js", "css": [], "js": ["pages/jump.svelte-2ace001b.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/es/index.svelte": { "entry": "pages/es/index.svelte-1ad7174a.js", "css": [], "js": ["pages/es/index.svelte-1ad7174a.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/es/favorita.svelte": { "entry": "pages/es/favorita.svelte-99e333a9.js", "css": [], "js": ["pages/es/favorita.svelte-99e333a9.js", "chunks/vendor-c74264e5.js"], "styles": [] }, "src/routes/es/salto.svelte": { "entry": "pages/es/salto.svelte-18bb71d8.js", "css": [], "js": ["pages/es/salto.svelte-18bb71d8.js", "chunks/vendor-c74264e5.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -8898,6 +8898,8 @@ var Verse = create_ssr_component(($$result, $$props, $$bindings, slots) => {
                 <button class="${"button button--" + escape(heart ? "minus" : "plus") + " svelte-it1fg3"}">Heart</button></div></div></div>
 </div>`;
 });
+var normalizeRegEx = /[\u0300-\u036f]/g;
+var punctuationRegEx = /[;|,|!|?|.]/g;
 function getFavorites() {
   const favorites = JSON.parse(localStorage.getItem("favorites"));
   if (Array.isArray(favorites)) {
@@ -8905,6 +8907,9 @@ function getFavorites() {
   }
   localStorage.setItem("favorites", JSON.stringify([]));
   return [];
+}
+function normalizeText(text) {
+  return typeof text === "string" ? text.replace(punctuationRegEx, "").normalize("NFD").replace(normalizeRegEx, "") : "";
 }
 var Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $json, $$unsubscribe_json;
@@ -8985,10 +8990,11 @@ var Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       }
     }
     for (let i2 = 0; i2 < books2.length; i2++) {
-      bookTermsResponse.push({ a: books2[i2], b: i2 + 1 });
+      bookTermsResponse.push({ a: normalizeText(books2[i2]), b: i2 + 1 });
     }
-    const searchValue = evt === void 0 ? "" : evt.target.value.trim().toLowerCase();
+    const searchValue = evt === void 0 ? "" : normalizeText(evt.target.value.trim().toLowerCase());
     const term = searchValue ? bookTermsResponse.find(({ a: a2 }) => {
+      a2 = normalizeText(a2);
       const termLength = a2.split(" ").length;
       const searchParts = searchValue.toLowerCase().split(" ");
       if (termLength === 1) {
@@ -9008,11 +9014,11 @@ var Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     const verseRangeSearch = verseLastSearch ? Array(verseParts[1] - 1 - (verseParts[0] - 2)).fill().map((element, index2) => index2 + verseParts[0]) : verseParts === null ? null : verseParts;
     const hasVerseRangeSearch = Array.isArray(verseRangeSearch) && verseRangeSearch.length;
     for (let i2 = 0; i2 < items.length; i2++) {
-      const text = `${items[i2].t}`;
+      const text = items[i2].t;
       const verseMatch = Array.isArray(verseRangeSearch) ? verseRangeSearch.find((verseItem) => verseItem === items[i2].v) : null;
-      const bookMatch = term && term.b === items[i2].b;
+      const bookMatch = term && normalizeText(term.b) === normalizeText(items[i2].b);
       const chapterMatch = chapterSearch === items[i2].c;
-      const textMatch = term ? false : text.toLowerCase().indexOf(searchValue) !== -1;
+      const textMatch = term ? false : normalizeText(text).toLowerCase().indexOf(searchValue) !== -1;
       if (evt === void 0 || searchValue === "" || bookMatch && !chapterSearch && !chapterMatch && !hasVerseRangeSearch || bookMatch && chapterSearch && chapterMatch && !hasVerseRangeSearch || bookMatch && chapterMatch && verseMatch || textMatch || jumpMatch) {
         ++searchCount;
         if (searchCount < 500) {

@@ -29,6 +29,8 @@
 	let books = [];
 	let controller = null;
 	let placeholder = $_("header.standard.placeholder");
+	let normalizeRegEx = /[\u0300-\u036f]/g;
+	let punctuationRegEx = /[;|,|!|?|.]/g;
 
 	updatePlaceholder();
 
@@ -129,6 +131,15 @@
 	}
 
 	/**
+	 * Normalize Text
+	 * @param text
+	 * @returns {*}
+	 */
+	function normalizeText(text) {
+		return typeof text === 'string' ? text.replace(punctuationRegEx, "").normalize('NFD').replace(normalizeRegEx, "") : '';
+	}
+
+	/**
 	 * Handle search
 	 * @param {object=} evt
 	 */
@@ -152,11 +163,12 @@
 		}
 
 		for (let i = 0; i < books.length; i++) {
-			bookTermsResponse.push({a: books[i], b: (i+1)});
+			bookTermsResponse.push({a: normalizeText(books[i]), b: (i+1)});
 		}
 
-		const searchValue = evt === undefined ? '' : evt.target.value.trim().toLowerCase();
+		const searchValue = evt === undefined ? '' : normalizeText(evt.target.value.trim().toLowerCase());
 		const term = searchValue ? bookTermsResponse.find(({a}) => {
+			a = normalizeText(a);
 			const termLength = a.split(' ').length;
 			const searchParts = searchValue.toLowerCase().split(' ');
 			if (termLength === 1) {
@@ -177,11 +189,11 @@
 		const hasVerseRangeSearch = Array.isArray(verseRangeSearch) && verseRangeSearch.length;
 
 		for (let i = 0; i < items.length; i++) {
-			const text = `${items[i].t}`;
+			const text = items[i].t;
 			const verseMatch = Array.isArray(verseRangeSearch) ? verseRangeSearch.find(verseItem => verseItem === items[i].v) : null;
-			const bookMatch = (term && (term.b === items[i].b));
+			const bookMatch = (term && (normalizeText(term.b) === normalizeText(items[i].b)));
 			const chapterMatch = chapterSearch === items[i].c;
-			const textMatch = term ? false : text.toLowerCase().indexOf(searchValue) !== -1;
+			const textMatch = term ? false : normalizeText(text).toLowerCase().indexOf(searchValue) !== -1;
 
 			if (
 				evt === undefined ||
