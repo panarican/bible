@@ -22,17 +22,43 @@
 	// Set vars
 	let isFavorite = false;
 	let isJump = false;
-	let isStandard = false;
+	let isStandard = true;
 	let lang = 'en';
 	let bibleResponse = [];
 	let bookTermsResponse = [];
 	let books = [];
 	let controller = null;
-	let placeholder = '';
+	let placeholder = $_("header.standard.placeholder");
 
 	page.subscribe(() => init());
 	bible.subscribe(value => bibleResponse = value);
 	bookTerms.subscribe(value => bookTermsResponse = value)
+
+	/**
+	 * Update the placeholder
+	 */
+	function updatePlaceholder() {
+		lang = $page.path.startsWith('/es') ? 'es' : 'en';
+		document.documentElement.lang = lang;
+		locale.set(lang);
+		isFavorite = $page.path === '/favorite' || $page.path === '/es/favorita';
+		isJump = $page.path === '/jump' || $page.path === '/es/salto';
+		isStandard = $page.path === '/' || $page.path === '/es';
+		if (isFavorite) {
+			placeholder = $_("header.favorite.placeholder");
+		} else if (isJump) {
+			placeholder = $_("header.jump.placeholder");
+		} else if (isStandard) {
+			placeholder = $_("header.standard.placeholder");
+		}
+		if (isFavorite) {
+			placeholder = $_("header.favorite.placeholder");
+		} else if (isJump) {
+			placeholder = $_("header.jump.placeholder");
+		} else if (isStandard) {
+			placeholder = $_("header.standard.placeholder");
+		}
+	}
 
 	/**
 	 * Init app
@@ -40,12 +66,8 @@
 	 */
 	async function init() {
 		try {
-			lang = $page.path.startsWith('/es') ? 'es' : 'en';
-			document.documentElement.lang = lang;
-			locale.set(lang);
-			isFavorite = $page.path === '/favorite' || $page.path === '/es/favorita';
-			isJump = $page.path === '/jump' || $page.path === '/es/salto';
-			isStandard = $page.path === '/' || $page.path === '/es';
+
+			updatePlaceholder();
 
 			// Kill previous requests
 			if (controller) {
@@ -67,22 +89,15 @@
 
 			const responses = await Promise.all(fetchJobs);
 
-			books = $json('books');
+			updatePlaceholder();
 
-			if (isFavorite) {
-				placeholder = $_("header.favorite.placeholder");
-			} else if (isJump) {
-				placeholder = $_("header.jump.placeholder");
-			} else if (isStandard) {
-				placeholder = $_("header.standard.placeholder");
-			}
+			books = $json('books');
 
 			const bibleResponse = await responses[0].json();
 			const bookTermsResponse = await responses[1].json();
 
 			bible.set(bibleResponse);
 			bookTerms.set(bookTermsResponse);
-
 
 			handleSearch();
 		} catch (e) {

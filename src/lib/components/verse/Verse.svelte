@@ -91,7 +91,7 @@
             utterThis.pitch = 1;
             utterThis.rate = 1;
             window.speechSynthesis.speak(utterThis);
-       }, 250);
+       }, 100);
     }
 
     /**
