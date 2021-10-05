@@ -80,7 +80,7 @@
         window.speechSynthesis.cancel();
         setTimeout(() => {
             const utterThis = new SpeechSynthesisUtterance(content);
-            utterThis.voice = window.speechSynthesis.getVoices().find(({name}) => name === ($locale === 'en' ? 'Alex' : 'Juan'));
+            utterThis.voice = window.speechSynthesis.getVoices().find(({lang}) => lang.startsWith($locale));
             utterThis.pitch = 1;
             utterThis.rate = 1;
             window.speechSynthesis.speak(utterThis);
