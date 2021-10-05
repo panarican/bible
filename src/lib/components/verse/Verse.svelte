@@ -79,12 +79,19 @@
     async function handleSpeak(evt) {
         window.speechSynthesis.cancel();
         setTimeout(() => {
-            const utterThis = new SpeechSynthesisUtterance(content);
-            utterThis.voice = window.speechSynthesis.getVoices().find(({lang}) => lang.startsWith($locale));
+            const utterThis = new SpeechSynthesisUtterance(content.split(' (')[0]);
+            const voices = window.speechSynthesis.getVoices().filter(({localService}) => localService).sort(function(a, b) {
+                if(a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+                if(a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+                return 0;
+            });
+            const voice = voices.find(({lang}) => lang.startsWith(($locale === 'en' ? 'en-GB' : ($locale === 'es' ? 'es-ES' : $locale))));
+            const voiceFallback = voices.find(({lang}) => lang.startsWith($locale));
+            utterThis.voice = voice ? voice : voiceFallback;
             utterThis.pitch = 1;
             utterThis.rate = 1;
             window.speechSynthesis.speak(utterThis);
-        }, 100);
+       }, 250);
     }
 
     /**

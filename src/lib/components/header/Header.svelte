@@ -41,8 +41,8 @@
 	async function init() {
 		try {
 			lang = $page.path.startsWith('/es') ? 'es' : 'en';
+			document.documentElement.lang = lang;
 			locale.set(lang);
-
 			isFavorite = $page.path === '/favorite' || $page.path === '/es/favorita';
 			isJump = $page.path === '/jump' || $page.path === '/es/salto';
 			isStandard = $page.path === '/' || $page.path === '/es';
