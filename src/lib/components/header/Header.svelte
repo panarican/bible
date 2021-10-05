@@ -30,7 +30,7 @@
 	let controller = null;
 	let placeholder = $_("header.standard.placeholder");
 	let normalizeRegEx = /[\u0300-\u036f]/g;
-	let punctuationRegEx = /[;|,|!|?|.]/g;
+	let punctuationRegEx = /[;|,|!|?|¿|¡|.]/g;
 
 	updatePlaceholder();
 
