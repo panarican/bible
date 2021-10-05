@@ -30,6 +30,8 @@
 	let controller = null;
 	let placeholder = $_("header.standard.placeholder");
 
+	updatePlaceholder();
+
 	page.subscribe(() => init());
 	bible.subscribe(value => bibleResponse = value);
 	bookTerms.subscribe(value => bookTermsResponse = value)
@@ -44,13 +46,6 @@
 		isFavorite = $page.path === '/favorite' || $page.path === '/es/favorita';
 		isJump = $page.path === '/jump' || $page.path === '/es/salto';
 		isStandard = $page.path === '/' || $page.path === '/es';
-		if (isFavorite) {
-			placeholder = $_("header.favorite.placeholder");
-		} else if (isJump) {
-			placeholder = $_("header.jump.placeholder");
-		} else if (isStandard) {
-			placeholder = $_("header.standard.placeholder");
-		}
 		if (isFavorite) {
 			placeholder = $_("header.favorite.placeholder");
 		} else if (isJump) {
