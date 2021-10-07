@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Búsqueda con salto - MyBible</title>
+	<title>Saltar a un verso de la Biblia - MyBible</title>
 </svelte:head>
 
 

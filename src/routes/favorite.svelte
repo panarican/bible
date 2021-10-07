@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>=Favorite Search - MyBible</title>
+	<title>Search a favorite passage or Bible verse - MyBible</title>
 </svelte:head>
 
 

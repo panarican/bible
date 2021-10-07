@@ -3,5 +3,5 @@
 </script>
 
 <svelte:head>
-	<title>Standard Search - MyBible</title>
+	<title>Search a passage or Bible verse - MyBible</title>
 </svelte:head>

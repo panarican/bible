@@ -1,10 +1,10 @@
 {
   "header": {
     "standard": {
-      "placeholder": "Busque un pasaje o versículo bíblico"
+      "placeholder": "Busque un pasaje o versículo Bíblico"
     },
     "favorite": {
-      "placeholder": "Busque un pasaje o versículo bíblico favorito"
+      "placeholder": "Busque un pasaje o versículo Bíblico favorito"
     },
     "jump": {
       "placeholder": "Saltar a un verso de la Biblia"

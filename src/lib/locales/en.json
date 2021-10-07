@@ -1,13 +1,13 @@
 {
   "header": {
     "standard": {
-      "placeholder": "Search a passage or bible verse"
+      "placeholder": "Search a passage or Bible verse"
     },
     "favorite": {
-      "placeholder": "Search a favorite passage or bible verse"
+      "placeholder": "Search a favorite passage or Bible verse"
     },
     "jump": {
-      "placeholder": "Jump to a verse in the bible"
+      "placeholder": "Jump to a verse in the Bible"
     }
   },
   "nav": [

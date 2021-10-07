@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Búsqueda favorita - MyBible</title>
+	<title>Busque un pasaje o versículo Bíblico favorito - MyBible</title>
 </svelte:head>
 
 
