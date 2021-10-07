@@ -3,5 +3,5 @@
 </script>
 
 <svelte:head>
-	<title>Bible - Standard Search</title>
+	<title>Standard Search - MyBible</title>
 </svelte:head>

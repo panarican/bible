@@ -1,6 +1,6 @@
 {
-	"name": "Bible",
-	"short_name": "Bible",
+	"name": "MyBible",
+	"short_name": "MyBible",
 	"icons": [
 		{
 			"src": "/android-chrome-192x192.png",

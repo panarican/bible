@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Biblia - Búsqueda favorita</title>
+	<title>Búsqueda favorita - MyBible</title>
 </svelte:head>
 
 

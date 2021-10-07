@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Bible - Favorite Search</title>
+	<title>=Favorite Search - MyBible</title>
 </svelte:head>
 
 

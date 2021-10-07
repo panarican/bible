@@ -3,5 +3,5 @@
 </script>
 
 <svelte:head>
-	<title>Biblia - Búsqueda estándar</title>
+	<title>Búsqueda estándar - MyBible</title>
 </svelte:head>

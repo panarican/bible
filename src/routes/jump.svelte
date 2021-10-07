@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Bible - Jump Search</title>
+	<title>Jump Search - MyBible</title>
 </svelte:head>
 
 

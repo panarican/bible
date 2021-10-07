@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Biblia - Búsqueda con salto</title>
+	<title>Búsqueda con salto - MyBible</title>
 </svelte:head>
 
 
