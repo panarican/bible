@@ -15,8 +15,8 @@
 	let searchResults = [];
 	let y;
 
-	count.subscribe(value => resultsCount = value);
-	results.subscribe(value => searchResults = value);
+	count.subscribe((value) => (resultsCount = value));
+	results.subscribe((value) => (searchResults = value));
 
 	addMessages('en', en);
 	addMessages('es', es);
@@ -25,21 +25,22 @@
 		initialLocale: 'en'
 	});
 </script>
-<svelte:window bind:scrollY={y}/>
+
+<svelte:window bind:scrollY={y} />
 
 <Header />
 <Nav />
 
 <slot />
 
-<main class="{resultsCount === 0 ? 'main main--no-results' : 'main'}">
+<main class={resultsCount === 0 ? 'main main--no-results' : 'main'}>
 	{#each searchResults as result, i}
 		<Verse {...result} />
 	{/each}
 </main>
 
-<Footer count="{resultsCount}" />
-<Top y={y} />
+<Footer count={resultsCount} />
+<Top {y} />
 
 <style lang="scss">
 	.main {

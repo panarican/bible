@@ -4,5 +4,5 @@
 </script>
 
 <footer class="footer">
-	<div class="count">{$_("footer.count", {values: {count}})}</div>
+	<div class="count">{$_('footer.count', { values: { count } })}</div>
 </footer>

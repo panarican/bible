@@ -5,5 +5,3 @@
 <svelte:head>
 	<title>Jump to a verse in the Bible - MyBible</title>
 </svelte:head>
-
-

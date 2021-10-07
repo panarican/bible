@@ -5,5 +5,3 @@
 <svelte:head>
 	<title>Saltar a un verso de la Biblia - MyBible</title>
 </svelte:head>
-
-
