@@ -36,6 +36,7 @@
 		isFavorite = $page.path === '/favorite' || $page.path === '/es/favorita';
 		isJump = $page.path === '/jump' || $page.path === '/es/salto';
 		isStandard = $page.path === '/' || $page.path === '/es';
+
 		if (isFavorite) {
 			placeholder = $_('header.favorite.placeholder');
 		} else if (isJump) {
@@ -150,18 +151,18 @@
 		}
 
 		for (let i = 0; i < books.length; i++) {
-			bookTermsResponse.push({ a: normalizeText(books[i]), b: i + 1 });
+			bookTermsResponse.push({ a: books[i], b: i + 1 });
 		}
 
 		const searchValue =
 			evt === undefined ? '' : normalizeText(evt.target.value.trim().toLowerCase());
 		const term = searchValue
 			? bookTermsResponse.find(({ a }) => {
-					a = normalizeText(a);
+					a = a;
 					const termLength = a.split(' ').length;
 					const searchParts = searchValue.toLowerCase().split(' ');
 					if (termLength === 1) {
-						return a.toLowerCase() === searchParts[0];
+						return normalizeText(a.toLowerCase()) === searchParts[0];
 					} else if (termLength === 2) {
 						const chapterVerseParts =
 							Array.isArray(searchValue) && searchValue > 0 ? searchParts[1].split(':') : null;
@@ -212,11 +213,11 @@
 			const verseMatch = Array.isArray(verseRangeSearch)
 				? verseRangeSearch.find((verseItem) => verseItem === items[i].v)
 				: null;
-			const bookMatch = term && normalizeText(term.b) === normalizeText(items[i].b);
+			const bookMatch = term && term.b === items[i].b;
 			const chapterMatch = chapterSearch === items[i].c;
 			const textMatch = term
 				? false
-				: normalizeText(text).toLowerCase().indexOf(searchValue) !== -1;
+				: normalizeText(text.toLowerCase()).indexOf(searchValue) !== -1;
 
 			if (
 				evt === undefined ||
