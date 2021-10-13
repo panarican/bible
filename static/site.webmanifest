@@ -1,21 +1,32 @@
 {
-	"name": "MyBible",
-	"short_name": "MyBible",
-	"icons": [
-		{
-			"src": "/android-chrome-192x192.png",
-			"sizes": "192x192",
-			"type": "image/png"
-		},
-		{
-			"src": "/android-chrome-384x384.png",
-			"sizes": "384x384",
-			"type": "image/png"
-		}
-	],
-	"theme_color": "#333333",
-	"background_color": "#333333",
-	"display": "standalone",
-	"scope": "/",
-	"start_url": "/"
+    "theme_color": "darkred",
+    "background_color": "#333",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "name": "MyBible",
+    "short_name": "MyBible",
+    "description": "Search a passage or Bible verse",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
 }

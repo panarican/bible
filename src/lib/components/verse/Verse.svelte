@@ -122,12 +122,14 @@
 
 <div class="verse{flip ? ' verse--flip' : ''}">
 	<div class="front" on:click={handleFlip}>
-		<div class="front__content">{content}</div>
+		<div class="front__content">
+			{content} <span class='front__title'>({title})</span>
+		</div>
 	</div>
 	<div class="back">
 		<div class="back__content">
 			{#if title}
-				<h3 class="title">{title}</h3>
+				<h3 class="back__title">{title}</h3>
 			{/if}
 			<div class="button-group">
 				<button class="button button--back" on:click={handleFlipBack}>Back</button>
@@ -186,7 +188,8 @@
 	}
 	.back {
 		opacity: 0;
-		background-color: #333;
+		background-color: #000;
+    background-image: url(/assets/images/leather.png);
 		color: #fff;
 		height: inherit;
 		position: absolute;
@@ -196,10 +199,17 @@
 		visibility: hidden;
 		user-select: none;
 	}
-	.title {
+	.front__title, .back__title {
 		font-weight: 500;
-		font-size: 18px;
-		margin: 0 0 10px;
+		white-space: nowrap;
+	}
+	.front__title {
+    margin: 0 0 5px;
+		color: darkred;
+  }
+	.back__title {
+    font-size: 18px;
+    margin: 0 0 10px;
 	}
 	.button {
 		overflow: hidden;
@@ -211,7 +221,7 @@
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: 60% auto;
-		background-color: #bbb;
+		background-color: #fff;
 		appearance: none;
 		border: none;
 		margin: 0 5px;

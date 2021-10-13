@@ -234,7 +234,7 @@
 					jumpMatch = isJump;
 					searchResults.push({
 						title: `${books[items[i].b - 1]} ${items[i].c}:${items[i].v}`,
-						content: `${text} (${books[items[i].b - 1]} ${items[i].c}:${items[i].v})`,
+						content: text,
 						index: items[i].i,
 						heart: isFavorite || favorites.find((value) => value === items[i].i) >= 0,
 						flip: false
@@ -250,7 +250,8 @@
 
 <header class="header">
 	<div class="header__content">
-		<form id="form" on:submit={handleSubmit}>
+		<a href={$json('nav')[0].path} class='header__logo'>MyBible</a>
+		<form class="header__form" id="form" on:submit={handleSubmit}>
 			<input
 				tabindex="1"
 				autocomplete="off"
@@ -263,3 +264,56 @@
 		</form>
 	</div>
 </header>
+
+<style lang='scss'>
+    .header {
+				background-image: url(/assets/images/leather.png);
+        background-color: #000;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+        user-select: none;
+			&__logo {
+        display: block;
+        background: url(/assets/images/logo.svg) left top no-repeat;
+        background-size: 145px 45px;
+        overflow: hidden;
+        text-indent: -9999px;
+        width: 53px;
+        height: 45px;
+        @media (min-width: 550px) {
+          width: 145px;
+        }
+      }
+			&__content {
+        margin: 0 auto;
+        max-width: 530px;
+        display: grid;
+        column-gap: 15px;
+        grid-template-columns: 53px 1fr;
+        @media (min-width: 550px) {
+          column-gap: 20px;
+          grid-template-columns: 145px 1fr;
+        }
+      }
+    }
+    .search {
+        -webkit-appearance: none;
+        appearance: none;
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.25);
+        font-size: var(--font-size);
+        width: 100%;
+        color: var(--primary);
+        padding: calc(var(--spacing) / 1.5);
+        display: block;
+        border-radius: calc(var(--spacing) / 3);
+        outline: none;
+        background-color: var(--secondary);
+        border: none;
+        text-overflow: ellipsis;
+			&:focus {
+        outline: none;
+      }
+    }
+</style>

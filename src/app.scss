@@ -35,37 +35,7 @@ body {
 .footer {
 	padding: calc(var(--spacing) / 1.5);
 }
-.header {
-	background-color: #333;
-	position: sticky;
-	top: 0;
-	z-index: 9999;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-	user-select: none;
-}
-.header__content {
-	margin: 0 auto;
-	max-width: 960px;
-}
 
-.search {
-	-webkit-appearance: none;
-	appearance: none;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-	font-size: var(--font-size);
-	width: 100%;
-	color: var(--primary);
-	padding: calc(var(--spacing) / 1.5);
-	display: block;
-	border-radius: calc(var(--spacing) / 3);
-	outline: none;
-	background-color: var(--secondary);
-	border: none;
-	text-overflow: ellipsis;
-}
-.search:focus {
-	outline: none;
-}
 .count {
 	font-size: 14px;
 	text-align: center;
