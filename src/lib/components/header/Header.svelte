@@ -1,9 +1,12 @@
 <script>
 	import { _, json } from 'svelte-i18n';
+	import en from '$lib/locales/en.json';
+	import es from '$lib/locales/es.json';
 	import { results, count, bible, bookTerms } from '$lib/stores.js';
 	import { locale } from 'svelte-i18n';
 	import { page } from '$app/stores';
 	// Set vars
+	const localeJson = { en, es };
 	let isFavorite = false;
 	let isJump = false;
 	let isStandard = true;
@@ -15,9 +18,14 @@
 	let placeholder = $_('header.standard.placeholder');
 	let normalizeRegEx = /[\u0300-\u036f]/g;
 	let punctuationRegEx = /[;|,|!|?|¿|¡|.]/g;
+	let logoPath = '';
 
 	updatePlaceholder();
 
+	locale.subscribe((value) => {
+		books = localeJson[value].books;
+		logoPath = localeJson[value].nav[0].path;
+	});
 	page.subscribe(() => init());
 	bible.subscribe((value) => (bibleResponse = value));
 	bookTerms.subscribe((value) => (bookTermsResponse = value));
@@ -77,8 +85,6 @@
 			const responses = await Promise.all(fetchJobs);
 
 			updatePlaceholder();
-
-			books = $json('books');
 
 			const bibleResponse = await responses[0].json();
 			const bookTermsResponse = await responses[1].json();
@@ -207,42 +213,43 @@
 			? null
 			: verseParts;
 		const hasVerseRangeSearch = Array.isArray(verseRangeSearch) && verseRangeSearch.length;
+		const noValue = evt === undefined || searchValue === '';
 
-		for (let i = 0; i < items.length; i++) {
-			const text = items[i].t;
-			const verseMatch = Array.isArray(verseRangeSearch)
-				? verseRangeSearch.find((verseItem) => verseItem === items[i].v)
-				: null;
-			const bookMatch = term && term.b === items[i].b;
-			const chapterMatch = chapterSearch === items[i].c;
-			const textMatch = term
-				? false
-				: normalizeText(text.toLowerCase()).indexOf(searchValue) !== -1;
+		if (!noValue) {
+			for (let i = 0; i < items.length; i++) {
+				const text = items[i].t;
+				const verseMatch = Array.isArray(verseRangeSearch)
+					? verseRangeSearch.find((verseItem) => verseItem === items[i].v)
+					: null;
+				const bookMatch = term && term.b === items[i].b;
+				const chapterMatch = chapterSearch === items[i].c;
+				const textMatch = term
+					? false
+					: normalizeText(text.toLowerCase()).indexOf(searchValue) !== -1;
 
-			if (
-				evt === undefined ||
-				searchValue === '' ||
-				(bookMatch && !chapterSearch && !chapterMatch && !hasVerseRangeSearch) ||
-				(bookMatch && chapterSearch && chapterMatch && !hasVerseRangeSearch) ||
-				(bookMatch && chapterMatch && verseMatch) ||
-				textMatch ||
-				jumpMatch
-			) {
-				++searchCount;
-				// To help with performance for now let's limit to 500 found results (will do pagination later)
-				if (searchCount < 500) {
-					jumpMatch = isJump;
-					searchResults.push({
-						title: `${books[items[i].b - 1]} ${items[i].c}:${items[i].v}`,
-						content: text,
-						index: items[i].i,
-						heart: isFavorite || favorites.find((value) => value === items[i].i) >= 0,
-						flip: false
-					});
+
+				if (
+					(bookMatch && !chapterSearch && !chapterMatch && !hasVerseRangeSearch) ||
+					(bookMatch && chapterSearch && chapterMatch && !hasVerseRangeSearch) ||
+					(bookMatch && chapterMatch && verseMatch) ||
+					textMatch ||
+					jumpMatch
+				) {
+					++searchCount;
+					// To help with performance for now let's limit to 500 found results (will do pagination later)
+					if (searchCount < 500) {
+						jumpMatch = isJump;
+						searchResults.push({
+							title: `${books[items[i].b - 1]} ${items[i].c}:${items[i].v}`,
+							content: text,
+							index: items[i].i,
+							heart: isFavorite || favorites.find((value) => value === items[i].i) >= 0,
+							flip: false
+						});
+					}
 				}
 			}
 		}
-
 		results.set(searchResults);
 		count.set(searchCount);
 	}
@@ -250,7 +257,7 @@
 
 <header class="header">
 	<div class="header__content">
-		<a href={$json('nav')[0].path} class='header__logo'>MyBible</a>
+		<a href={logoPath} class='header__logo'>MyBible</a>
 		<form class="header__form" id="form" on:submit={handleSubmit}>
 			<input
 				tabindex="1"

@@ -1,12 +1,12 @@
 <script>
-	import { locale, json } from 'svelte-i18n';
+	import { locale } from 'svelte-i18n';
 	import { page } from '$app/stores';
+	import en from '$lib/locales/en.json';
+	import es from '$lib/locales/es.json';
+	const localeJson = { en, es };
 
-	// Weird hack to get nav to not go MIA
-	let nav = $json('nav').length === 8 ? $json('nav').splice(4, 8) : $json('nav');
-	locale.subscribe(
-		() => (nav = $json('nav').length === 8 ? $json('nav').splice(4, 8) : $json('nav'))
-	);
+	let nav = [];
+	locale.subscribe((value) => (nav = localeJson[value].nav));
 </script>
 
 <nav class="nav">

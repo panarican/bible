@@ -5,18 +5,18 @@
 	import Verse from '$lib/components/verse/Verse.svelte';
 	import Header from '$lib/components/header/Header.svelte';
 	import Nav from '$lib/components/nav/Nav.svelte';
+	import Book from '$lib/components/book/Book.svelte';
 	import { count, results } from '$lib/stores.js';
+	import { locale } from 'svelte-i18n';
 	import '../app.scss';
 	import { addMessages, init } from 'svelte-i18n';
 	import en from '$lib/locales/en.json';
 	import es from '$lib/locales/es.json';
-
+	const localeJson = { en, es };
 	let resultsCount = 0;
 	let searchResults = [];
 	let y;
-
-	count.subscribe((value) => (resultsCount = value));
-	results.subscribe((value) => (searchResults = value));
+	let books = localeJson['en'].books
 
 	addMessages('en', en);
 	addMessages('es', es);
@@ -24,6 +24,10 @@
 	init({
 		initialLocale: 'en'
 	});
+
+	locale.subscribe((value) => books = localeJson[value].books);
+	count.subscribe((value) => (resultsCount = value));
+	results.subscribe((value) => (searchResults = value));
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -33,10 +37,16 @@
 
 <slot />
 
-<main class={resultsCount === 0 ? 'main main--no-results' : 'main'}>
+<main class="main">
+	{#if searchResults.length === 0}
+		{#each books as name}
+			<Book name={name} />
+		{/each}
+	{:else}
 	{#each searchResults as result, i}
 		<Verse {...result} />
 	{/each}
+		{/if}
 </main>
 
 <Footer count={resultsCount} />
