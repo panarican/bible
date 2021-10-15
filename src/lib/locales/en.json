@@ -17,15 +17,15 @@
 		},
 		{
 			"label": "Favorite",
-			"path": "/favorite"
+			"path": "/favorite/"
 		},
 		{
 			"label": "Jump",
-			"path": "/jump"
+			"path": "/jump/"
 		},
 		{
 			"label": "Español",
-			"path": "/es"
+			"path": "/es/"
 		}
 	],
 	"footer": {

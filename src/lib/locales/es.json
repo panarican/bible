@@ -13,15 +13,15 @@
 	"nav": [
 		{
 			"label": "Estándar",
-			"path": "/es"
+			"path": "/es/"
 		},
 		{
 			"label": "Favorita",
-			"path": "/es/favorita"
+			"path": "/es/favorita/"
 		},
 		{
 			"label": "Salto",
-			"path": "/es/salto"
+			"path": "/es/salto/"
 		},
 		{
 			"label": "English",
