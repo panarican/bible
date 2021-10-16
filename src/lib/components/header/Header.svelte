@@ -23,7 +23,7 @@
 	updatePlaceholder();
 
 	locale.subscribe((value) => {
-		books = localeJson[value].books;
+		books = localeJson[value].books.map(({name}) => name);
 		logoPath = localeJson[value].nav[0].path;
 	});
 	page.subscribe(() => init());
@@ -41,9 +41,9 @@
 			// Do nothing
 		}
 		locale.set(lang);
-		isFavorite = $page.path === '/favorite' || $page.path === '/es/favorita';
-		isJump = $page.path === '/jump' || $page.path === '/es/salto';
-		isStandard = $page.path === '/' || $page.path === '/es';
+		isFavorite = $page.path.includes('favorite') || $page.path.includes('favorita');
+		isJump = $page.path.includes('jump') || $page.path.includes('salto');
+		isStandard = $page.path === '/' || $page.path === '/es' || $page.path === '/es/';
 
 		if (isFavorite) {
 			placeholder = $_('header.favorite.placeholder');
@@ -226,7 +226,6 @@
 				const textMatch = term
 					? false
 					: normalizeText(text.toLowerCase()).indexOf(searchValue) !== -1;
-
 
 				if (
 					(bookMatch && !chapterSearch && !chapterMatch && !hasVerseRangeSearch) ||
