@@ -1,10 +1,10 @@
 <div class="book">
-	<h3 class='book__name'>{name}</h3>
-	<div class='book__chapters'>
-		{#each chapters as chapter, i}
-			<button class='book__chapter'>{chapter}</button>
-		{/each}
-	</div>
+		<h3 class='book__name'>{name}</h3>
+		<div class='book__chapters'>
+			{#each chapters as chapter, i}
+				<div class='book__chapter'>{chapter}</div>
+			{/each}
+		</div>
 </div>
 
 <script>
@@ -36,16 +36,23 @@
       margin: 0 0 10px;
     }
 		&__chapters {
-			display: block;
+			display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
 			margin-left: -10px;
 			margin-right: -10px;
 		}
 		&__chapter {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all .25s ease-in-out;
+			text-align: center;
 			width: 40px;
 			height: 40px;
+			line-height: 1;
+			padding: 0;
 			margin: 4px;
-			display: inline-block;
-			text-align: center;
 			cursor: pointer;
 			color: #333;
 			border: 1px solid #333;
