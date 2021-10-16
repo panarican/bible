@@ -37,10 +37,10 @@
 
 <slot />
 
-<main class="main">
+<main class="main{searchResults.length === 0 ? ' main--books' : ' main--verses'}">
 	{#if searchResults.length === 0}
-		{#each books as name}
-			<Book name={name} />
+		{#each books as { name, chapters }}
+			<Book name={name} chapters={[...Array(chapters).keys()].map(i => i + 1)} />
 		{/each}
 	{:else}
 	{#each searchResults as result, i}
@@ -57,12 +57,21 @@
 		justify-items: center;
 		display: grid;
 		gap: calc(var(--spacing) / 1.5);
-		grid-template-rows: masonry;
-		grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));
 		padding-bottom: 0;
+    grid-template-rows: masonry;
+    grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));
 
 		&--no-results {
 			display: none;
 		}
+
+		//&--books {
+    //  grid-template-columns: 1fr;
+		//}
+		//
+		//&--verses {
+    //  grid-template-rows: masonry;
+    //  grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));
+		//}
 	}
 </style>
