@@ -262,6 +262,9 @@
 			<input
 				tabindex="1"
 				autocomplete="off"
+				autocorrect="off"
+				autocapitalize="off"
+				spellcheck="false"
 				id="search"
 				class="search"
 				{placeholder}
