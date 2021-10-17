@@ -1,6 +1,6 @@
 <script>
-	import { onDestroy } from 'svelte';
-	import { _, json } from 'svelte-i18n';
+	import { browser } from '$app/env';
+	import { _ } from 'svelte-i18n';
 	import en from '$lib/locales/en.json';
 	import es from '$lib/locales/es.json';
 	import { results, count, bible, bookTerms, search } from '$lib/stores.js';
@@ -24,14 +24,14 @@
 
 	updatePlaceholder();
 
-	const localeSub = locale.subscribe((value) => {
+	locale.subscribe((value) => {
 		books = localeJson[value].books.map(({name}) => name);
 		logoPath = localeJson[value].nav[0].path;
 	});
-	const pageSub = page.subscribe(() => init());
-	const bibleSub = bible.subscribe((value) => (bibleResponse = value));
-	const bookSub = bookTerms.subscribe((value) => (bookTermsResponse = value));
-	const searchSub = search.subscribe((value = '') => {
+	page.subscribe(() => init());
+	bible.subscribe((value) => (bibleResponse = value));
+	bookTerms.subscribe((value) => (bookTermsResponse = value));
+	search.subscribe((value = '') => {
 		try {
 			handleSearch(value);
 		} catch (e) {
@@ -100,7 +100,6 @@
 
 			bible.set(bibleResponse);
 			bookTerms.set(bookTermsResponse);
-
 			handleSearch($search);
 		} catch (e) {
 			// Do nothing
@@ -276,12 +275,21 @@
 		count.set(searchCount);
 	}
 
-	// on destroy maybe?
-	onDestroy(localeSub);
-	onDestroy(pageSub);
-	onDestroy(bibleSub);
-	onDestroy(bookSub);
-	onDestroy(searchSub);
+	/**
+	 * Clear the search
+	 */
+	function handleClear() {
+		search.set('');
+	}
+
+	// Handle in browser logic
+	if (browser) {
+		const queryString = window.location.search ? decodeURIComponent(window.location.search.split('q=')[1]) : '';
+
+		if (queryString) {
+			search.set(queryString);
+		}
+	}
 </script>
 
 <header class="header">
@@ -295,11 +303,14 @@
 				autocapitalize="off"
 				spellcheck="false"
 				id="search"
-				class="search"
+				class="search{$search ? ' search--has-query' : ''}"
 				{placeholder}
 				type="search"
 				bind:value={$search}
 			/>
+			{#if $search}
+				<div class='clear' on:click={handleClear}></div>
+			{/if}
 		</form>
 	</div>
 </header>
@@ -336,6 +347,9 @@
           grid-template-columns: 145px 1fr;
         }
       }
+			&__form {
+				position: relative;
+			}
     }
     .search {
         -webkit-appearance: none;
@@ -351,8 +365,30 @@
         background-color: var(--secondary);
         border: none;
         text-overflow: ellipsis;
+			&--has-query {
+				padding-right: 35px;
+			}
 			&:focus {
         outline: none;
       }
     }
+		.clear {
+			color: darkred;
+			position: absolute;
+			right: 0;
+			z-index: 2;
+			width: 40px;
+			height: 40px;
+			top: 50%;
+			margin-top: -20px;
+			background: url(/assets/images/x.svg) center no-repeat;
+			background-size: 50% 50%;
+			cursor: pointer;
+		}
+    input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+    input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration { display: none; }
 </style>
