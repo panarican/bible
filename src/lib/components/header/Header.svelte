@@ -50,7 +50,7 @@
 			// Do nothing
 		}
 		locale.set(lang);
-		isFavorite = $page.path.includes('favorite') || $page.path.includes('favorita');
+		isFavorite = $page.path.includes('favorite') || $page.path.includes('favorito');
 		isJump = $page.path.includes('jump') || $page.path.includes('salto');
 		isStandard = $page.path === '/' || $page.path === '/es' || $page.path === '/es/';
 

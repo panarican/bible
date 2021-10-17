@@ -17,11 +17,11 @@
 		},
 		{
 			"label": "Favorite",
-			"path": "/favorite"
+			"path": "/favorite/"
 		},
 		{
 			"label": "Español",
-			"path": "/es"
+			"path": "/es/"
 		}
 	],
 	"footer": {

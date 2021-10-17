@@ -13,11 +13,11 @@
 	"nav": [
 		{
 			"label": "Buscar",
-			"path": "/es"
+			"path": "/es/"
 		},
 		{
 			"label": "Favorito",
-			"path": "/es/favorito"
+			"path": "/es/favorito/"
 		},
 		{
 			"label": "English",
