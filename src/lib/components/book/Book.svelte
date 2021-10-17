@@ -2,14 +2,26 @@
 		<h3 class='book__name'>{name}</h3>
 		<div class='book__chapters'>
 			{#each chapters as chapter, i}
-				<div class='book__chapter'>{chapter}</div>
+				<div class='book__chapter' on:click={updateSearch({name, chapter})}>{chapter}</div>
 			{/each}
 		</div>
 </div>
 
 <script>
+	import { search } from '$lib/stores.js';
 	export let name = '';
 	export let chapters = [];
+
+	/**
+	 * Handle Search
+	 * @param {String} name
+	 * @param {String} chapter
+	 * return {Boolean}
+	 */
+	function updateSearch({ name, chapter }) {
+		search.set(`${name} ${chapter}`);
+		return false;
+	}
 </script>
 
 <style lang="scss">

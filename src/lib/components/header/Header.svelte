@@ -1,8 +1,9 @@
 <script>
+	import { onDestroy } from 'svelte';
 	import { _, json } from 'svelte-i18n';
 	import en from '$lib/locales/en.json';
 	import es from '$lib/locales/es.json';
-	import { results, count, bible, bookTerms } from '$lib/stores.js';
+	import { results, count, bible, bookTerms, search } from '$lib/stores.js';
 	import { locale } from 'svelte-i18n';
 	import { page } from '$app/stores';
 	// Set vars
@@ -23,13 +24,20 @@
 
 	updatePlaceholder();
 
-	locale.subscribe((value) => {
+	const localeSub = locale.subscribe((value) => {
 		books = localeJson[value].books.map(({name}) => name);
 		logoPath = localeJson[value].nav[0].path;
 	});
-	page.subscribe(() => init());
-	bible.subscribe((value) => (bibleResponse = value));
-	bookTerms.subscribe((value) => (bookTermsResponse = value));
+	const pageSub = page.subscribe(() => init());
+	const bibleSub = bible.subscribe((value) => (bibleResponse = value));
+	const bookSub = bookTerms.subscribe((value) => (bookTermsResponse = value));
+	const searchSub = search.subscribe((value = '') => {
+		try {
+			handleSearch(value);
+		} catch (e) {
+			// Do nothing
+		}
+	})
 
 	/**
 	 * Update the placeholder
@@ -92,8 +100,6 @@
 
 			bible.set(bibleResponse);
 			bookTerms.set(bookTermsResponse);
-
-			handleSearch();
 		} catch (e) {
 			// Do nothing
 		}
@@ -136,9 +142,8 @@
 
 	/**
 	 * Handle search
-	 * @param {object=} evt
 	 */
-	function handleSearch(evt) {
+	function handleSearch(query) {
 		const favorites = getFavorites();
 		const searchResults = [];
 		let searchCount = 0;
@@ -161,8 +166,7 @@
 			bookTermsResponse.push({ a: books[i], b: i + 1 });
 		}
 
-		const searchValue =
-			evt === undefined ? '' : normalizeText(evt.target.value.trim().toLowerCase());
+		const searchValue = query ? normalizeText(query.trim().toLowerCase()) : '';
 		const term = searchValue
 			? bookTermsResponse.find(({ a }) => {
 					a = a;
@@ -214,7 +218,7 @@
 			? null
 			: verseParts;
 		const hasVerseRangeSearch = Array.isArray(verseRangeSearch) && verseRangeSearch.length;
-		const noValue = evt === undefined || searchValue === '';
+		const noValue = !searchValue || searchValue.length === 1;
 
 		if (!noValue) {
 			for (let i = 0; i < items.length; i++) {
@@ -253,7 +257,9 @@
 						}
 				}
 			}
-		} else {
+		}
+
+		if (searchResults.length === 0) {
 			for (let i = 0; i < books.length; i++) {
 				searchResults.push({name: books[i], chapters: bookChapters[i]});
 			}
@@ -262,6 +268,13 @@
 		results.set(searchResults);
 		count.set(searchCount);
 	}
+
+	// on destroy maybe?
+	onDestroy(localeSub);
+	onDestroy(pageSub);
+	onDestroy(bibleSub);
+	onDestroy(bookSub);
+	onDestroy(searchSub);
 </script>
 
 <header class="header">
@@ -278,7 +291,7 @@
 				class="search"
 				{placeholder}
 				type="search"
-				on:keyup={handleSearch}
+				bind:value={$search}
 			/>
 		</form>
 	</div>
