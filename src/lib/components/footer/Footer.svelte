@@ -1,10 +1,14 @@
 <script>
-	import { _ } from 'svelte-i18n';
-	export let count = 0;
 </script>
 
-<footer class="footer">
-	{#if count}
-		<div class="count">{$_('footer.count', { values: { count } })}</div>
-	{/if}
-</footer>
+<footer class="footer">©2021 - MyBible</footer>
+
+<style>
+	.footer {
+      font-size: 14px;
+      text-align: center;
+      color: var(--primary);
+      opacity: 0.5;
+      user-select: none;
+	}
+</style>

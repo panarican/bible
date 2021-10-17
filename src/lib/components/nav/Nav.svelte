@@ -11,7 +11,7 @@
 
 <nav class="nav">
 	{#each nav as item, i}
-		<a class="nav__item {$page.path.replace('/', '') === item.path.replace('/', '') ? 'nav__item--active' : ''}" href={item.path}
+		<a class="nav__item {$page.path === item.path ? 'nav__item--active' : ''}" href={item.path}
 			>{item.label}</a
 		>
 	{/each}
@@ -19,7 +19,7 @@
 
 <style lang="scss">
 	.nav {
-		background-color: #bbb;
+		background-color: #555;
 		display: flex;
 		justify-content: center;
 		align-items: center;

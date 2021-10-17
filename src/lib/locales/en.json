@@ -12,20 +12,16 @@
 	},
 	"nav": [
 		{
-			"label": "Standard",
+			"label": "Search",
 			"path": "/"
 		},
 		{
 			"label": "Favorite",
-			"path": "/favorite/"
-		},
-		{
-			"label": "Jump",
-			"path": "/jump/"
+			"path": "/favorite"
 		},
 		{
 			"label": "Español",
-			"path": "/es/"
+			"path": "/es"
 		}
 	],
 	"footer": {

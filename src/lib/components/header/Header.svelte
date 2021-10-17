@@ -100,6 +100,8 @@
 
 			bible.set(bibleResponse);
 			bookTerms.set(bookTermsResponse);
+
+			handleSearch($search);
 		} catch (e) {
 			// Do nothing
 		}
@@ -152,6 +154,11 @@
 
 		results.set(searchResults);
 		count.set(searchCount);
+
+		window.scroll({
+			top: 0,
+			left: 0
+		});
 
 		for (let i = 0; i < bibleResponse.length; i++) {
 			bibleResponse[i].i = i;

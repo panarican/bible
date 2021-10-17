@@ -14,9 +14,6 @@
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-touch-callout: none;
 }
-html {
-	scroll-behavior: smooth;
-}
 html,
 body {
 	margin: 0;
@@ -37,11 +34,12 @@ body {
 }
 
 .count {
+	margin-top: 10px;
+	margin-bottom: -5px;
 	font-size: 14px;
 	text-align: center;
 	color: var(--primary);
 	opacity: 0.5;
-	margin-bottom: calc(var(--spacing) * 1.75);
 	user-select: none;
 }
 
@@ -61,5 +59,8 @@ body {
 	.top {
 		bottom: var(--spacing);
 		right: var(--spacing);
+	}
+	.count {
+		margin-bottom: -10px;
 	}
 }

@@ -7,7 +7,7 @@
 	import Nav from '$lib/components/nav/Nav.svelte';
 	import Book from '$lib/components/book/Book.svelte';
 	import { count, results } from '$lib/stores.js';
-	import { locale } from 'svelte-i18n';
+	import { _, locale } from 'svelte-i18n';
 	import '../app.scss';
 	import { addMessages, init } from 'svelte-i18n';
 	import en from '$lib/locales/en.json';
@@ -26,7 +26,6 @@
 	});
 
 	locale.subscribe((value) => books = localeJson[value].books);
-	count.subscribe((value) => (resultsCount = value));
 	results.subscribe((value) => (searchResults = value));
 </script>
 
@@ -34,6 +33,10 @@
 
 <Header />
 <Nav />
+
+{#if $count}
+	<div class="count">{$_('footer.count', { values: { count: $count } })}</div>
+{/if}
 
 <slot />
 
@@ -47,7 +50,7 @@
 	{/each}
 </main>
 
-<Footer count={resultsCount} />
+<Footer />
 <Top {y} />
 
 <style lang="scss">
