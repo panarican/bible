@@ -35,19 +35,23 @@
 <Nav />
 
 {#if $count}
-	<div class="count">{$_('footer.count', { values: { count: $count } })}</div>
+	<div class="count">{$_('count', { values: { count: $count } })}</div>
 {/if}
 
 <slot />
 
 <main class="main">
-	{#each searchResults as result, i}
-		{#if Array.isArray(result.chapters)}
-			<Book {...result} />
-		{:else if result.content}
-			<Verse {...result} />
-		{/if}
-	{/each}
+	{#if Array.isArray(searchResults) && searchResults.length > 1}
+		{#each searchResults as result, i}
+			{#if Array.isArray(result.chapters)}
+				<Book {...result} />
+			{:else if result.content}
+				<Verse {...result} />
+			{/if}
+		{/each}
+	{:else}
+		{$_('noFavorites')}
+	{/if}
 </main>
 
 <Footer />

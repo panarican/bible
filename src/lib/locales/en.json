@@ -1,13 +1,10 @@
 {
 	"header": {
 		"standard": {
-			"placeholder": "Search a passage or Bible verse"
+			"placeholder": "Search the Bible"
 		},
 		"favorite": {
-			"placeholder": "Search a favorite passage or Bible verse"
-		},
-		"jump": {
-			"placeholder": "Jump to a verse in the Bible"
+			"placeholder": "Search your Bible favorites"
 		}
 	},
 	"nav": [
@@ -24,9 +21,8 @@
 			"path": "/es/"
 		}
 	],
-	"footer": {
-		"count": "Results found ({count})"
-	},
+	"count": "Results found ({count})",
+	"noFavorites": "Sorry, we found no favorite verses try changing your search or adding some favorites if you haven't already.",
 	"books": [
 		{
 			"name": "Genesis",

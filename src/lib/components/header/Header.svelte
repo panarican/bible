@@ -226,7 +226,7 @@
 		const hasVerseRangeSearch = Array.isArray(verseRangeSearch) && verseRangeSearch.length;
 		const noValue = !searchValue || searchValue.length === 1;
 
-		if (!noValue) {
+		if (isFavorite || !noValue) {
 			for (let i = 0; i < items.length; i++) {
 				const text = items[i].t;
 				const verseMatch = Array.isArray(verseRangeSearch)
@@ -247,6 +247,7 @@
 					(bookMatch && chapterSearch && chapterMatch && !hasVerseRangeSearch) ||
 					(bookMatch && chapterMatch && verseMatch) ||
 					textMatch ||
+					$search === '' && isFavorite ||
 					jumpMatch
 				) {
 						++searchCount;
@@ -265,7 +266,7 @@
 			}
 		}
 
-		if (searchResults.length === 0) {
+		if (!isFavorite && searchResults.length === 0) {
 			for (let i = 0; i < books.length; i++) {
 				searchResults.push({name: books[i], chapters: bookChapters[i]});
 			}

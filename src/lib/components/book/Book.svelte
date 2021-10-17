@@ -43,7 +43,7 @@
     z-index: 900;
     transform: rotateX(0deg) rotateY(0deg);
 		&__name {
-      font-size: 20px;
+      font-size: 24px;
 			display: block;
       margin: 0 0 10px;
     }

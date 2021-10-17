@@ -1,13 +1,10 @@
 {
 	"header": {
 		"standard": {
-			"placeholder": "Busque un pasaje o versículo Bíblico"
+			"placeholder": "Buscar en la Biblia"
 		},
 		"favorite": {
-			"placeholder": "Busque un pasaje o versículo Bíblico favorito"
-		},
-		"jump": {
-			"placeholder": "Saltar a un verso de la Biblia"
+			"placeholder": "Busque sus favoritos de la Biblia"
 		}
 	},
 	"nav": [
@@ -24,9 +21,8 @@
 			"path": "/"
 		}
 	],
-	"footer": {
-		"count": "Resultados encontrados ({count})"
-	},
+	"count": "Resultados encontrados ({count})",
+	"noFavorites": "Lo sentimos, no encontramos versos favoritos, intente cambiar su búsqueda o agregar algunos favoritos si aún no lo ha hecho.",
 	"books":  [
 		{
 			"name": "Génesis",
