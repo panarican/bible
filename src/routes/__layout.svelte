@@ -37,16 +37,14 @@
 
 <slot />
 
-<main class="main{searchResults.length === 0 ? ' main--books' : ' main--verses'}">
-	{#if searchResults.length === 0}
-		{#each books as { name, chapters }}
-			<Book name={name} chapters={[...Array(chapters).keys()].map(i => i + 1)} />
-		{/each}
-	{:else}
+<main class="main">
 	{#each searchResults as result, i}
-		<Verse {...result} />
-	{/each}
+		{#if Array.isArray(result.chapters)}
+			<Book {...result} />
+		{:else if result.content}
+			<Verse {...result} />
 		{/if}
+	{/each}
 </main>
 
 <Footer count={resultsCount} />
@@ -60,18 +58,5 @@
 		padding-bottom: 0;
     grid-template-rows: masonry;
     grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));
-
-		&--no-results {
-			display: none;
-		}
-
-		//&--books {
-    //  grid-template-columns: 1fr;
-		//}
-		//
-		//&--verses {
-    //  grid-template-rows: masonry;
-    //  grid-template-columns: repeat(auto-fill, minmax(293px, 1fr));
-		//}
 	}
 </style>

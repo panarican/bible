@@ -19,6 +19,7 @@
 	let normalizeRegEx = /[\u0300-\u036f]/g;
 	let punctuationRegEx = /[;|,|!|?|¿|¡|.]/g;
 	let logoPath = '';
+	let bookChapters = localeJson.en.books.map(({chapters}) => [...Array(chapters).keys()].map(i => i + 1));
 
 	updatePlaceholder();
 
@@ -228,27 +229,36 @@
 					: normalizeText(text.toLowerCase()).indexOf(searchValue) !== -1;
 
 				if (
-					(bookMatch && !chapterSearch && !chapterMatch && !hasVerseRangeSearch) ||
+					(bookMatch && !chapterSearch && !chapterMatch && !hasVerseRangeSearch)
+				) {
+					searchResults.push({name: books[items[i].b - 1], chapters: bookChapters[items[i].b - 1]});
+					break;
+				} else if (
 					(bookMatch && chapterSearch && chapterMatch && !hasVerseRangeSearch) ||
 					(bookMatch && chapterMatch && verseMatch) ||
 					textMatch ||
 					jumpMatch
 				) {
-					++searchCount;
-					// To help with performance for now let's limit to 500 found results (will do pagination later)
-					if (searchCount < 500) {
-						jumpMatch = isJump;
-						searchResults.push({
-							title: `${books[items[i].b - 1]} ${items[i].c}:${items[i].v}`,
-							content: text,
-							index: items[i].i,
-							heart: isFavorite || favorites.find((value) => value === items[i].i) >= 0,
-							flip: false
-						});
-					}
+						++searchCount;
+						// To help with performance for now let's limit to 500 found results (will do pagination later)
+						if (searchCount < 500) {
+							jumpMatch = isJump;
+							searchResults.push({
+								title: `${books[items[i].b - 1]} ${items[i].c}:${items[i].v}`,
+								content: text,
+								index: items[i].i,
+								heart: isFavorite || favorites.find((value) => value === items[i].i) >= 0,
+								flip: false
+							});
+						}
 				}
 			}
+		} else {
+			for (let i = 0; i < books.length; i++) {
+				searchResults.push({name: books[i], chapters: bookChapters[i]});
+			}
 		}
+
 		results.set(searchResults);
 		count.set(searchCount);
 	}
